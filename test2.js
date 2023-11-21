@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-require("dotenv").config()
+require('dotenv').config();
 
 // Connection URI for your MongoDB server
 const uri = process.env.MONGODB_KEY; // Replace with your MongoDB server URL
@@ -10,14 +10,7 @@ const collectionName = 'regularprices'; // Replace with your collection name
 
 // Your original dataset
 const originalDataset = [
-  { priceName: 'mtn_250mb_CG', priceValue: 64.00 },
-  { priceName: 'mtn_500mb_CG', priceValue: 124.00 },
-  { priceName: 'mtn_1gb_CG', priceValue: 235.00 },
-  { priceName: 'mtn_2gb_CG', priceValue: 470.00 },
-  { priceName: 'mtn_3gb_CG', priceValue: 705.00 },
-  { priceName: 'mtn_5gb_CG', priceValue: 1175.00 },
-  { priceName: 'mtn_10gb_CG', priceValue: 2350.00 },
-  { priceName: 'mtn_15gb_CG', priceValue: 3395.00 },
+  { priceName: 'glo_200mb', priceValue: 90 },
 ];
 
 // Add N20 to each price value
