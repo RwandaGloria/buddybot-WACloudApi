@@ -230,3 +230,20 @@
 {"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-21 20:53:35"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 20:56:54"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 20:59:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 23:02:52"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 23:53:09"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 23:53:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-21 23:57:27"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 00:00:10"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 00:00:22"}
+{"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-22 00:03:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 00:09:43"}
+{"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-22 00:10:21"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 12:23:22"}
+{"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-22 12:25:13"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 12:28:56"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 12:29:16"}
+{"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-22 12:29:42"}
+{"level":"info","message":" successfully!","service":"user-service","timestamp":"2023-11-22 19:49:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 20:35:40"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-22 20:38:26"}

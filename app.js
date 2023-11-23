@@ -36,24 +36,25 @@ const businessPrices = require('./models/business_prices');
 const utils = require('./utils');
 const logger = require('./logger');
 // Initialize your database connection and other necessary setup...
+
+db.connect();
+const from = '138691232664340';
+const token = process.env.ACCESS_TOKEN;
+const webhookVerifyToken = 'hellogloriathisis';
+const bot = createBot.createBot(from, token);
+
+const userStates = new Map();
+let whatsappUserNumber;
+let userState;
+
 (async () => {
   try {
-    await db.connect();
-    const from = '138691232664340';
-    const token = process.env.ACCESS_TOKEN;
-    const webhookVerifyToken = 'hellogloriathisis';
-
-    const bot = createBot.createBot(from, token);
-
     await bot.startExpressServer({
       webhookVerifyToken,
-      port: 9031,
+      port: 3000,
       webhookPath: '/custom/webhook',
     });
 
-    const userStates = new Map();
-    let whatsappUserNumber;
-    let userState;
     const getAllRegularUserPrices = await regularPrices.find();
     const getAllBusinessUserPrices = await businessPrices.find();
 
@@ -178,8 +179,14 @@ const logger = require('./logger');
                 // Validate the phone number and process data purchase
                 const buyDataResponse = await utils.fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, getPhoneNo, network, type, ROSSY_NETWORK_ID, ROSSY_PLAN_ID, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE);
                 await bot.sendText(whatsappUserNumber, buyDataResponse);
+
                 userState = 'START'; // Return to the main menu
                 userStates.set(whatsappUserNumber, userState);
+                await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
+                a --> Fund wallet
+                b --> Buy data
+                c --> Check wallet balance
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
               } else {
                 // Handle invalid phone number input
                 await bot.sendText(whatsappUserNumber, 'Invalid phone number format. Enter it like this: 08166358607 or type Cancel to go back.');
@@ -695,7 +702,7 @@ app.post('/my-webhook', async (req, res) => {
           b --> Buy data \n
           c --> Check wallet balance \n d --> For inquiries/partnerships \n Please enter one of the following options, 1 or 2 or 7`);
 
-        res.send(200);
+        res.sendStatus(200);
         userState = 'START';
         userStates.set(customer_phone_num, userState);
       } else {
@@ -712,5 +719,5 @@ app.get('/hi', async (req, res) => {
   res.send('Hello!');
 });
 app.listen(PORT, () => {
-  console.log('Server started successfully!');
+  console.log(`Server started successfully at ${PORT}`);
 });

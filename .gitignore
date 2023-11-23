@@ -1,3 +1,4 @@
 node_modules
 .env
-network.json
+logs
+.env

@@ -129,7 +129,7 @@ async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobi
     const user = await Users.findOne({ phone: whatsappUserNumber });
     const checkUserWalletBalance = await checkUserBalance(whatsappUserNumber, price);
     if (checkUserWalletBalance === false) {
-      return `You have insufficient funds in your wallet to make this transaction, as your wallet balance is only ${user.walletBalance} NGN. \n\n Please enter 1 to fund your wallet.  or enter Cancel to return to the main menu`;
+      return `You have insufficient funds in your wallet to make this transaction, as your wallet balance is only ${user.walletBalance} NGN. \n\n Please enter a to fund your wallet.`;
     }
 
     const JSONData = await buyFromPatoMobile(DataAvenuePrice_ID, phoneNumber, price, whatsappUserNumber, network, type, PatoMobile_data_id);
@@ -141,6 +141,16 @@ async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobi
         { $inc: { walletBalance: -price } },
         { new: true },
       );
+      const newTransaction = await Transaction.create({
+        user_phoneNumber: `${whatsappUserNumber}`,
+        amount: price,
+        txntype: 'debit',
+        details: {
+          desc: `${network} Data Purchase`,
+          amount: `${price}`,
+          ref_id: 'random',
+        },
+      });
 
       return `${JSONData.Data_Plan} Data sent successfully to ${phoneNumber}! Check data balance. Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
     }
