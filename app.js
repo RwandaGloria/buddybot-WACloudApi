@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable no-case-declarations */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-inner-declarations */
@@ -163,20 +164,28 @@ let userState;
           await bot.sendText(whatsappUserNumber, 'Enter phone number to buy data, Enter it like this: 08166358607 or type Cancel to go back.');
 
           bot.on('message', async (msg) => {
-            console.log(userInput);
+            console.log(`${msg.from} said: ${msg.data.text}`);
+            if (userInput.toUpperCase() === null) {
+              await bot.sendText(whatsappUserNumber, 'Invalid message format, enter Cancel to go back to main menu');
+            }
             if (msg.data.text.toUpperCase() === 'CANCEL') {
+              console.log('Cancel');
               userInput = '';
               userState = 'START'; // Return to the main menu
               userStates.set(whatsappUserNumber, userState);
               return;
             }
-            if (userInput.toUpperCase() !== 'CANCEL' && userState !== 'START') {
+            if (msg.data.text.toUpperCase() !== 'CANCEL' && userState !== 'START') {
               // Handle the user's phone number input and data purchase logic here
               const getPhoneNo = msg.data.text;
-              const result = await utils.validateUserPhoneNo(getPhoneNo);
-
-              if (result) {
+              const result = await utils.validateUserPhoneNo(getPhoneNo, CLUBKONECT_MOBILE_NETWORK_CODE);
+              // if (checkPhoneNumNetwork.status === 'false') {
+              //   await bot.sendText(whatsappUserNumber, checkPhoneNumNetwork.message);
+              //   console.log('hello');
+              // } else if (checkPhoneNumNetwork.status === 'true') {
+              if (result.status === true) {
                 // Validate the phone number and process data purchase
+
                 const buyDataResponse = await utils.fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, getPhoneNo, network, type, ROSSY_NETWORK_ID, ROSSY_PLAN_ID, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE);
                 await bot.sendText(whatsappUserNumber, buyDataResponse);
 
@@ -189,7 +198,7 @@ let userState;
                 d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
               } else {
                 // Handle invalid phone number input
-                await bot.sendText(whatsappUserNumber, 'Invalid phone number format. Enter it like this: 08166358607 or type Cancel to go back.');
+                await bot.sendText(whatsappUserNumber, result.message);
               }
             }
           });
@@ -237,15 +246,6 @@ let userState;
             }
             break;
           case 'CHOOSE_AIRTEL_PLAN':
-            if (userInput.toUpperCase() === 'CANCEL') {
-              userState = 'START';
-              userStates.set(whatsappUserNumber, userState);
-              await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
-            }
             switch (userInput.toUpperCase()) {
               case 'A':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -277,42 +277,46 @@ let userState;
                 userState = 'INPUT_PHONE_NO';
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'airtel_2gb_30days', airtel_2gb_business, 101, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 237, 1000, '04', userInput, 237, 2000, 101, airtel_2gb_business, '2gb');
+                  return await buyData(whatsappUserNumber, 'airtel_2gb_30days', airtel_2gb_business, 101, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 237, 2000, '04', userInput, 237, 2000, 101, airtel_2gb_business, '2gb');
                 }
-                return await buyData(whatsappUserNumber, 'airtel_2gb_30days', airtel_2gb, 101, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 237, 1000, '04', userInput, 237, 2000, 101, airtel_2gb_business, '2gb');
+                return await buyData(whatsappUserNumber, 'airtel_2gb_30days', airtel_2gb, 101, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 237, 2000, '04', userInput, 237, 2000, 101, airtel_2gb_business, '2gb');
 
                 break;
               case 'E':
                 userState = 'INPUT_PHONE_NO';
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'airtel_5gb_30days', airtel_5gb_business, 102, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 238, 1000, '04', userInput, 238, 2000, 102, airtel_5gb_business, '5gb');
+                  return await buyData(whatsappUserNumber, 'airtel_5gb_30days', airtel_5gb_business, 102, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 238, 5000, '04', userInput, 238, 5000, 102, airtel_5gb_business, '5gb');
                 }
-                return await buyData(whatsappUserNumber, 'airtel_5gb_30days', airtel_5gb, 102, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 238, 1000, '04', userInput, 238, 2000, 102, airtel_5gb_business, '5gb');
+                return await buyData(whatsappUserNumber, 'airtel_5gb_30days', airtel_5gb, 102, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 238, 5000, '04', userInput, 238, 5000, 102, airtel_5gb_business, '5gb');
 
                 break;
               case 'F':
                 userState = 'INPUT_PHONE_NO';
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'airtel_10gb_30days', airtel_10gb_business, 103, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 239, 1000, '04', userInput, 239, 2000, 10300, airtel_11gb_business, '11GB');
+                  return await buyData(whatsappUserNumber, 'airtel_10gb_30days', airtel_10gb_business, 103, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 239, 1000, '04', userInput, 239, 10000, 10300, airtel_10gb_business, '10GB');
                 }
-                return await buyData(whatsappUserNumber, 'airtel_10gb_30days', airtel_10gb_business, 103, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 239, 1000, '04', 3999.01, airtel_11gb, '11GB');
-
+                return await buyData(whatsappUserNumber, 'airtel_10gb_30days', airtel_10gb, 103, msg, 'airtel', 'corporate', userState, userStates, bot, 4, 239, 1000, '04', userInput, 239, 10000, 10300, airtel_10gb, '10GB');
                 break;
-            }
-            break;
-          case 'CHOOSE_GLO_PLAN':
-            if (userInput.toUpperCase() === 'CANCEL') {
-              userState = 'START';
-              userStates.set(whatsappUserNumber, userState);
-
-              await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
+              case 'CANCEL':
+                userState = 'START';
+                userStates.set(whatsappUserNumber, userState);
+                await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
               a --> Fund wallet
               b --> Buy data
               c --> Check wallet balance
               d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                break;
+              default:
+                if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
+                  console.log(userState);
+                  await bot.sendText(msg.from, 'Invalid option. Please enter a, b, c, d, e, f, or g or type Cancel to go back');
+                }
+                break;
             }
+            break;
+          case 'CHOOSE_GLO_PLAN':
             switch (userInput.toUpperCase()) {
               case 'A':
                 userState = 'INPUT_PHONE_NO';
@@ -320,7 +324,7 @@ let userState;
                 if (checkUserType.userType === 'business') {
                   return await buyData(whatsappUserNumber, 'glo_cg_200mb_30days', glo_200mb_business, 120000, msg, 'glo', 'corporate', userState, userStates, bot, 2, 278, 500, '02', userInput, 276, 500, 122, glo_200mb_business, '200 MB');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_500mb_30days', glo_500mb, 122, msg, 'glo', 'corporate', userState, userStates, bot, 2, 276, 500, '02', userInput, 276, 500, 122, glo_500mb, '500MB');
+                return await buyData(whatsappUserNumber, 'glo_cg_500mb_30days', glo_500mb_business, 122, msg, 'glo', 'corporate', userState, userStates, bot, 2, 276, 500, '02', userInput, 276, 500, 122, glo_500mb, '500MB');
                 break;
               case 'B':
                 userState = 'INPUT_PHONE_NO';
@@ -335,32 +339,26 @@ let userState;
                 userState = 'INPUT_PHONE_NO';
 
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'glo_cg_1gb_30days', glo_1gb_business, 123, 'glo', 'corporate', userState, userStates, bot, 2, 271, 500, '02', userInput, 194, 1000, 123, glo_1gb_CG_business, '1gb');
+                  return await buyData(whatsappUserNumber, 'glo_cg_1gb_30days', glo_1gb_business, 123, msg, 'glo', 'corporate', userState, userStates, bot, 2, 271, 1000, '02', userInput, 194, 1000, 123, glo_1gb_business, '1gb');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_1gb_30days', glo_1gb, 123, 'glo', msg, 'corporate', userState, userStates, bot, 2, 271, 500, '02', userInput, 194, 1000, 123, glo_1gb_CG_business, '1gb');
-
+                return await buyData(whatsappUserNumber, 'glo_cg_1gb_30days', glo_1gb, 123, 'glo', msg, 'corporate', userState, userStates, bot, 2, 271, 1000, '02', userInput, 194, 1000, 123, glo_1gb, '1gb');
                 break;
               case 'D':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 userState = 'INPUT_PHONE_NO';
-
-                // a ---> 500MB, b ---> 1gb, c --> 2gb, d --> 3gb , e --> 5gb, f --> 10gb
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'glo_cg_2gb_30days', glo_2gb_business, 124, 'glo', msg, 'corporate', userState, userStates, bot, 2, 272, 500, '02', userInput, 272, 2000, 124, glo_2gb_CG_business, '2gb');
+                  return await buyData(whatsappUserNumber, 'glo_cg_2gb_30days', glo_2gb_business, 124, 'glo', msg, 'corporate', userState, userStates, bot, 2, 272, 2000, '02', userInput, 272, 2000, 124, glo_2gb_business, '2gb');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_2gb_30days', glo_2gb, 124, 'glo', msg, 'corporate', userState, userStates, bot, 2, 272, 2000, '02', userInput, 272, 2500.01, 124, glo_2gb_CG_business, '2gb');
-
+                return await buyData(whatsappUserNumber, 'glo_cg_2gb_30days', glo_2gb, 124, 'glo', msg, 'corporate', userState, userStates, bot, 2, 272, 2000, '02', userInput, 272, 2000, 124, glo_2gb, '2gb');
                 break;
-                // a --> 500mb, b --> 1gb, c --> 2gb, d --> 3gb, e --> 5gb, f --> 10gb
               case 'E':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 userState = 'INPUT_PHONE_NO';
 
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'glo_cg_3gb_30days', glo_3gb_business, 125, 'glo', msg, 'corporate', userState, userStates, bot, 2, 273, 3000, '02', userInput, 195, 3000, 125, glo_3gb_CG_business, '3gb');
+                  return await buyData(whatsappUserNumber, 'glo_cg_3gb_30days', glo_3gb_business, 125, 'glo', msg, 'corporate', userState, userStates, bot, 2, 273, 3000, '02', userInput, 195, 3000, 125, glo_3gb_business, '3gb');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_3gb_30days', glo_3gb, 125, 'glo', msg, 'corporate', userState, userStates, bot, 2, 273, 3000, '02', userInput, 195, 3000, 125, glo_3gb_CG_business, '3gb');
-
+                return await buyData(whatsappUserNumber, 'glo_cg_3gb_30days', glo_3gb, 125, 'glo', msg, 'corporate', userState, userStates, bot, 2, 273, 3000, '02', userInput, 195, 3000, 125, glo_3gb, '3gb');
                 break;
               case 'F':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -368,23 +366,34 @@ let userState;
                 if (checkUserType.userType === 'business') {
                   return await buyData(whatsappUserNumber, 'glo_cg_5gb_30days', glo_5gb_business, 126, 'glo', msg, 'corporate', userState, userStates, bot, 2, 274, 5000, '02', userInput, 274, 5800.01, 126, glo_5gb_business, '5.8gb');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_5gb_30days', glo_5gb, 126, 'glo', msg, 'corporate', userState, userStates, bot, 2, 274, 5000, '02', userInput, 274, 5800.01, 126, glo_5gb_business, '5.8gb');
+                return await buyData(whatsappUserNumber, 'glo_cg_5gb_30days', glo_5gb, 126, 'glo', msg, 'corporate', userState, userStates, bot, 2, 274, 5000, '02', userInput, 274, 5000, 126, glo_5gb, '5.8gb');
 
                 break;
               case 'G':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 userState = 'INPUT_PHONE_NO';
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUserNumber, 'glo_cg_10gb_30days', glo_10gb_business, 127, 'glo', msg, 'corporate', userState, userStates, bot, 2, 275, 10000, '02', userInput, 275, 10000.01, 127, glo_10gb_CG_business, '10gb');
+                  return await buyData(whatsappUserNumber, 'glo_cg_10gb_30days', glo_10gb_business, 127, 'glo', msg, 'corporate', userState, userStates, bot, 2, 275, 10000, '02', userInput, 275, 10000, 127, glo_10gb_business, '10gb');
                 }
-                return await buyData(whatsappUserNumber, 'glo_cg_10gb_30days', glo_10gb, 127, 'glo', msg, 'corporate', userState, userStates, bot, 2, 275, 10000, '02', userInput, 275, 10000.01, 127, glo_10gb_CG_business, '10gb');
-
+                return await buyData(whatsappUserNumber, 'glo_cg_10gb_30days', glo_10gb, 127, 'glo', msg, 'corporate', userState, userStates, bot, 2, 275, 10000, '02', userInput, 275, 10000, 127, glo_10gb, '10gb');
                 break;
               case 'CANCEL':
-                userState = 'START'; // Return to the main menu
+                userState = 'START';
                 userStates.set(whatsappUserNumber, userState);
+                await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
+                a --> Fund wallet
+                b --> Buy data
+                c --> Check wallet balance
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                break;
+              default:
+                if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
+                  console.log(userState);
+                  await bot.sendText(msg.from, 'Invalid option. Please enter a, b, c, d, e, f, or g or type Cancel to go back');
+                }
                 break;
             }
+            break;
           case 'CHECK_WALLET_BALANCE':
             checkUserType = await Users.findOne({ phone: whatsappUserNumber });
             await bot.sendText(msg.from, `You have NGN ${checkUserType.walletBalance}  in your wallet balance.\n\n`);
@@ -398,9 +407,6 @@ let userState;
             break;
           case 'CHOOSE_NETWORK':
             checkUserType = await Users.findOne({ phone: whatsappUserNumber });
-            if (userInput.toUpperCase() === 'AA') {
-              await bot.sendText(whatsappUserNumber, 'Hello dear!');
-            }
             if (userInput.toUpperCase() === 'A') {
               checkUserType = await Users.findOne({ phone: whatsappUserNumber });
               if (checkUserType.userType === 'business') {
@@ -471,7 +477,7 @@ let userState;
               d. GLO 2GB --> NGN ${glo_2gb_business} \n
               e. GLO 3GB --> NGN ${glo_3gb_business} \n
               f. GLO 5GB --> NGN ${glo_5gb_business} \n
-              . GLO 10GB --> NGN ${glo_10gb_business} \n
+              g. GLO 10GB --> NGN ${glo_10gb_business} \n
                         
               Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
             `);
@@ -533,15 +539,6 @@ let userState;
             d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
             break;
           case 'CHOOSE_MTN_PLAN':
-            if (userInput.toUpperCase() === 'CANCEL') {
-              userState = 'START';
-              userStates.set(whatsappUserNumber, userState);
-              await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
-            }
             switch (userInput.toUpperCase()) {
               case 'A':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -613,12 +610,21 @@ let userState;
                 return await buyData(whatsappUserNumber, 'data_share_10gb', mtn_10gb, 6, msg, 'mtn', 'sme', userState, userStates, bot, 1, 265, 10000.0, '01', userInput, 266, 10000.00, 6, mtn_10gb_CG);
 
                 break;
+              case 'CANCEL':
+                userState = 'START';
+                userStates.set(whatsappUserNumber, userState);
+                await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
+                a --> Fund wallet
+                b --> Buy data
+                c --> Check wallet balance
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
                   console.log(userState);
                   await bot.sendText(msg.from, 'Invalid option. Please enter a, b, c, d, e, f, or g or type Cancel to go back');
-                  break;
                 }
+                break;
             }
             break;
           case 'A':
@@ -632,6 +638,84 @@ let userState;
           case 'INPUT_PHONE_NO':
             console.log('Input phone number case!...');
             break;
+          case 'CHOOSE_9MOBILE_PLAN':
+            switch (userInput.toUpperCase()) {
+              case 'A':
+                userState = 'INPUT_PHONE_NO';
+                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+                
+                if (checkUserType.userType === 'business') {
+                  return await buyData(whatsappUser.number, '9mobile_sme_1gb', nin_mobile_1gb_business, 23, message, '9mobile', 'corporate');
+                }
+                await buyData(whatsappUser.number, '9mobile_sme_1gb', nin_mobile_1gb, 23, message, '9mobile', 'corporate');
+
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                break;
+              case 'B':
+                userState = 'INPUT_PHONE_NO';
+
+                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+
+                if (checkUserType.userType === 'business') {
+                  await buyData(whatsappUser.number, '9mobile_sme_2gb', nin_mobile_2gb_business, 25, message, '9mobile', 'corporate');
+                } else {
+                  await buyData(whatsappUser.number, '9mobile_sme_2gb', nin_mobile_2gb, 25, message, '9mobile', 'corporate');
+                }
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                break;
+
+              case 'C':
+                userState = 'INPUT_PHONE_NO';
+                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+
+                if (checkUserType.userType === 'business') {
+                  await buyData(whatsappUser.number, '9mobile_sme_3gb', nin_mobile_3gb_business, 26, message, '9mobile', 'corporate');
+                } else {
+                  await buyData(whatsappUser.number, '9mobile_sme_3gb', nin_mobile_3gb, 26, message, '9mobile', 'corporate');
+                }
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                break;
+              case 'D':
+                userState = 'INPUT_PHONE_NO';
+                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+
+                if (checkUserType.userType === 'business') {
+                  await buyData(whatsappUser.number, '9mobile_sme_5gb', nin_mobile_5gb_business, 27, message, '9mobile', 'corporate');
+                } else {
+                  await buyData(whatsappUser.number, '9mobile_sme_5gb', nin_mobile_5gb, 27, message, '9mobile', 'corporate');
+                }
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                break;
+              case 'E':
+                userState = 'INPUT_PHONE_NO';
+                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+
+                if (checkUserType.userType === 'business') {
+                  await buyData(whatsappUser.number, '9mobile_sme_10gb', nin_mobile_10gb_business, 28, message, 'glo', 'corporate');
+                } else {
+                  await buyData(whatsappUser.number, '9mobile_sme_10gb', nin_mobile_10gb, 28, message, 'glo', 'corporate');
+                }
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                break;
+              case 'CANCEL':
+                userState = 'START'; // Return to the main menu
+                userStates.set(whatsappUser.number, userState);
+                message.reply('You have returned to the main menu.  \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance \n d --> For inquirires/partnerships');
+                break;
+              default:
+                if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
+                  console.log(userState);
+                  message.reply("Invalid option. Please enter a, b, c, d, e, f, or g or type 'Cancel' to go back");
+                  break;
+                }
+            }
+            break;
+
           case 'FUND_WALLET':
             const amount = parseFloat(userInput);
             if ((Number.isNaN(amount)) === false) {

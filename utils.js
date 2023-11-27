@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-shadow */
 /* eslint-disable consistent-return */
@@ -12,6 +14,7 @@
 const axios = require('axios');
 const eventEmitter = require('events');
 const { PhoneNumberUtil } = require('google-libphonenumber');
+const NigerianPhone = require('validate_nigerian_phone');
 const db = require('./db');
 const Users = require('./models/users');
 const logger = require('./logger');
@@ -19,6 +22,7 @@ const Transaction = require('./models/transactions');
 const transaction = require('./models/transactions');
 const couponCodes = require('./models/coupon_codes');
 const links = require('./models/links');
+
 require('dotenv').config();
 
 const { PATOMOBILE_API_KEY } = process.env;
@@ -55,10 +59,12 @@ async function buyCGData(whatsappUserNumber, phoneNoForData, ROSSY_CG_DATA_ID, R
   const rossyData = await buyFromRossyTech(ROSSY_NETWORK_ID, phoneNoForData, ROSSY_CG_DATA_ID);
   const isRossySuccessful = await isRossyTransactionSuccessful(rossyData);
 
-  if (!isRossySuccessful === true) {
+  if (isRossySuccessful === false) {
     const clubKonectResponse = await clubKonect(phoneNoForData, CLUBKONECT_CG_DATA_ID, CLUBKONECT_MOBILE_NETWORK_CODE);
+    console.log(`Clubkonect code is ${CLUBKONECT_MOBILE_NETWORK_CODE}`);
     const isTransactionSuccessful = isClubKonnectTransactionSuccessful(clubKonectResponse.data);
-    if (!isTransactionSuccessful === false) {
+
+    if (isTransactionSuccessful === false) {
       return 'Data currently unavailable. Please try again later. We are sorry for the inconvenience. \n\n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
     }
 
@@ -126,6 +132,7 @@ async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobi
   // number --> Whatsapp User number
   // phone --> Phone Number you want to send data to.
   try {
+    console.log(`Clubkonnect is ${CLUBKONECT_MOBILE_NETWORK_CODE}`);
     const user = await Users.findOne({ phone: whatsappUserNumber });
     const checkUserWalletBalance = await checkUserBalance(whatsappUserNumber, price);
     if (checkUserWalletBalance === false) {
@@ -157,46 +164,69 @@ async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobi
 
     const rossyResponse = await buyFromRossyTech(ROSSY_NETWORK_ID, phoneNumber, ROSSY_PLAN_ID);
     const rossyResponseData = rossyResponse;
+    // const rossyResponse = {
+    //   status: 'MTN SME Data service is currently down, please select the MTN Corporate option',
+    // };
 
     const checkIfRossyTransactionIsSuccessful = await isRossyTransactionSuccessful(rossyResponseData);
 
-    if (checkIfRossyTransactionIsSuccessful) {
+    if (checkIfRossyTransactionIsSuccessful === true) {
       updatedUser = await Users.findOneAndUpdate(
         { phone: whatsappUserNumber },
         { $inc: { walletBalance: -price } },
         { new: true },
       );
-      return `${rossyResponseData.plan_network} ${rossyResponseData.plan_name} data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
+      return `${rossyResponseData.plan_network} ${rossyResponseData.plan_name} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
     }
 
     const clubKonectResponse = await clubKonect(phoneNumber, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE);
-    const clubKonectResponseData = clubKonectResponse.data;
+    console.log('CLUBKONNECT -----------> ');
+    console.log(`${CLUBKONNECT_DATAPLAN}is the code`);
+    console.log(clubKonectResponse);
 
-    if (isClubKonnectTransactionSuccessful(clubKonectResponseData)) {
-      updatedUser = await Users.findOneAndUpdate(
-        { phone: whatsappUserNumber },
-        { $inc: { walletBalance: -price } },
-        { new: true },
-      );
+    const result = isClubKonnectTransactionSuccessful(clubKonectResponse);
 
-      return `${clubKonectResponseData.mobilenetwork} ${clubKonectResponseData.productname} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
+    if (result === true) {
+      console.log('true');
+    } else if (result === false) {
+      console.log('false');
+    } else {
+      console.log(result);
     }
 
-    console.log(clubKonectResponseData);
-    logger.log({
-      level: 'error',
-      message: `Error connecting to ClubKonnect: ${clubKonectResponseData}`,
-    });
+    // const updatedUser = awa
+
+    // console.log(clubKonectResponse);
+    // console.log(typeof (clubKonectResponse));
+
+    // if (isClubKonnectTransactionSuccessful(clubKonectResponse) === true) {
+    //   updatedUser = await Users.findOneAndUpdate(
+    //     { phone: whatsappUserNumber },
+    //     { $inc: { walletBalance: -price } },
+    //     { new: true },
+    //   );
+    //   return `${clubKonectResponse.mobilenetwork} ${clubKonectResponse.productname} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
+    // }
+
+    // console.log(clubKonectResponse);
+    // logger.log({
+    //   level: 'error',
+    //   message: `Error connecting to ClubKonnect: ${clubKonectResponse}`,
+    // });
+    // else {
+    //   console.log(isClubKonnectTransactionSuccessful(clubKonectResponse));
+    // }
+    return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
 
     // Handle buying CG data.
-    await buyCGData(whatsappUserNumber, phoneNumber, ROSSY_CG_DATA_ID, ROSSY_NETWORK_ID, CLUBKONECT_MOBILE_NETWORK_CODE, CLUBKONECT_CG_DATA_ID, CG_DATA_PRICE, CG_DATA_AMOUNT, userState, userStates);
+    // await buyCGData(whatsappUserNumber, phoneNumber, ROSSY_CG_DATA_ID, ROSSY_NETWORK_ID, CLUBKONECT_MOBILE_NETWORK_CODE, CLUBKONECT_CG_DATA_ID, CG_DATA_PRICE, CG_DATA_AMOUNT, userState, userStates);
 
     // await bot.sendText(whatsappUserNumber, `We are really sorry but right now you can't purchase that data.  You can buy this data, we have this ${CG_DATA_AMOUNT} for ${CG_DATA_PRICE} NGN. \n\n Enter Y to buy this data or enter Cancel to return to the main menu.}`);
     // return `Boss! we're sorry you can't buy data at this time. There is a problem from our side. You can try going back to the main menu to buy CG data or try again in some minutes please. Thank you for your understanding! 🤲`
   } catch (err) {
     console.log(err);
     logger.error(err.message);
-    return err.message;
+    return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
   }
 }
 
@@ -253,7 +283,29 @@ async function buyFromRossyTech(network_id, phoneNoForPurchase, plan_id) {
   }
 }
 
-async function validateUserPhoneNo(number) {
+async function validateUserPhoneNoNetwork(phonenumber, ROSSY_NETWORK_CODE, CLUBKONECT_MOBILE_NETWORK_CODE) {
+  const phone = new NigerianPhone(phonenumber);
+  const network = phone.getNetwork().toUpperCase();
+
+  const obj = {
+    '01': 'MTN',
+    '02': 'GLO',
+    '03': '9MOBILE',
+    '04': 'AIRTEL',
+  };
+  if (CLUBKONECT_MOBILE_NETWORK_CODE) {
+    if (network === obj[CLUBKONECT_MOBILE_NETWORK_CODE]) {
+      return {
+        status: true,
+      };
+    }
+    return {
+      status: false,
+      message: `Sorry, this number is an ${network} number. Please enter a valid ${obj[CLUBKONECT_MOBILE_NETWORK_CODE]} number`,
+    };
+  }
+}
+async function validateUserPhoneNo(number, CLUBKONECT_MOBILE_NETWORK_CODE) {
   try {
     const regexPattern = /^0\d{10}$/;
 
@@ -261,13 +313,38 @@ async function validateUserPhoneNo(number) {
 
     if (!isNigerianNumber) {
       console.log('INvalid regex pattern!');
-      return false;
+      return {
+        status: false,
+      };
     }
-
     const phoneUtil = PhoneNumberUtil.getInstance();
     const phoneNumber = `${number}`;
     const result = phoneUtil.isValidNumber(phoneUtil.parse(phoneNumber, 'NG'));
-    return result;
+
+    if (result === false) {
+      return {
+        status: false, message: 'Please enter a valid Nigerian phone number, like this, 08166358607',
+      };
+    }
+    const phone = new NigerianPhone(number);
+    const network = phone.getNetwork().toUpperCase();
+    const obj = {
+      '01': 'MTN',
+      '02': 'GLO',
+      '03': '9MOBILE',
+      '04': 'AIRTEL',
+    };
+    if (CLUBKONECT_MOBILE_NETWORK_CODE) {
+      if (network === obj[CLUBKONECT_MOBILE_NETWORK_CODE]) {
+        return {
+          status: true,
+        };
+      }
+      return {
+        status: false,
+        message: `Sorry this number is not valid, This number is a ${network} number. Please enter a valid ${obj[CLUBKONECT_MOBILE_NETWORK_CODE]} number 👇`,
+      };
+    }
   } catch (error) {
     console.error('Error:', error);
   }
@@ -504,19 +581,19 @@ async function listenForPhoneNo() {
 
 async function isRossyTransactionSuccessful(data) {
   // check if data has the responses
+  console.log('---------------------->');
   console.log(data);
 
   // eslint-disable-next-line no-prototype-builtins
   if (data.hasOwnProperty('Status') && data.Status === 'successful') {
     return true;
   }
-
   return false;
 }
 
 async function isClubKonnectTransactionSuccessful(data) {
   try {
-    if (data.hasProperty('status') && data.status === 'ORDER_RECEIVED') {
+    if (data.hasOwnProperty('status') && data.status === 'ORDER_RECEIVED') {
       return true;
     }
 
@@ -556,5 +633,5 @@ async function createNewTransactionAndUpdateUserBalance(whatsappUserNumber, netw
 }
 
 module.exports = {
-  generateRandomReferenceID, createUser, checkUserBalance, fetchData, validateUserPhoneNo, generateCouponCodeAndSaveToDb, sendCouponCodeURLToExpBuddy, buyFromRossyTech, isRossyTransactionSuccessful, buyCGData,
+  generateRandomReferenceID, createUser, checkUserBalance, fetchData, validateUserPhoneNo, generateCouponCodeAndSaveToDb, sendCouponCodeURLToExpBuddy, buyFromRossyTech, isRossyTransactionSuccessful, buyCGData, clubKonect, validateUserPhoneNoNetwork,
 };
