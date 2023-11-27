@@ -6,17 +6,17 @@ const uri = process.env.MONGODB_KEY; // Replace with your MongoDB server URL
 
 // Database and collection names
 const dbName = 'test'; // Replace with your database name
-const collectionName = 'regularprices'; // Replace with your collection name
+const collectionName = 'businessprices'; // Replace with your collection name
 
 // Your original dataset
 const originalDataset = [
-  { priceName: 'glo_200mb', priceValue: 90 },
+  { priceName: 'nin_mobile_500mb', priceValue: 120 },
 ];
 
 // Add N20 to each price value
 const updatedDataset = originalDataset.map((item) => ({
   ...item,
-  priceValue: item.priceValue + 20,
+  priceValue: item.priceValue + 30,
 }));
 
 async function insertUpdatedData() {

@@ -85,6 +85,7 @@ let userState;
     const mtn_10gb_CG_business = getAllBusinessUserPrices.find((price) => price.priceName === 'mtn_10gb_CG').priceValue;
     const mtn_15gb_CG_business = getAllBusinessUserPrices.find((price) => price.priceName === 'mtn_15gb_CG').priceValue;
 
+    const nin_mobile_500mb = getAllRegularUserPrices.find((price) => price.priceName === 'nin_mobile_500mb').priceValue;
     const nin_mobile_1gb = getAllRegularUserPrices.find((price) => price.priceName === 'nin_mobile_1gb').priceValue;
     const nin_mobile_2gb = getAllRegularUserPrices.find((price) => price.priceName === 'nin_mobile_2gb').priceValue;
     const nin_mobile_3gb = getAllRegularUserPrices.find((price) => price.priceName === 'nin_mobile_3gb').priceValue;
@@ -120,6 +121,7 @@ let userState;
     const mtn_10gb_business = getAllBusinessUserPrices.find((price) => price.priceName === 'mtn_10gb').priceValue;
 
     // Fetch prices for 9mobile plans
+    const nin_mobile_500mb_business = getAllBusinessUserPrices.find((price) => price.priceName === 'nin_mobile_500mb').priceValue;
     const nin_mobile_1gb_business = getAllBusinessUserPrices.find((price) => price.priceName === '9mobile_1gb').priceValue;
     const nin_mobile_2gb_business = getAllBusinessUserPrices.find((price) => price.priceName === '9mobile_2gb').priceValue;
     const nin_mobile_3gb_business = getAllBusinessUserPrices.find((price) => price.priceName === '9mobile_3gb').priceValue;
@@ -127,6 +129,7 @@ let userState;
     const nin_mobile_10gb_business = getAllBusinessUserPrices.find((price) => price.priceName === '9mobile_10gb').priceValue;
 
     // Fetch prices for Glo plans
+
     const glo_500mb_business = getAllBusinessUserPrices.find((price) => price.priceName === 'glo_500mb').priceValue;
     const glo_1gb_business = getAllBusinessUserPrices.find((price) => price.priceName === 'glo_1gb').priceValue;
     const glo_2gb_business = getAllBusinessUserPrices.find((price) => price.priceName === 'glo_2gb').priceValue;
@@ -232,7 +235,9 @@ let userState;
               userState = 'START'; // Return to the main menu
               userStates.set(whatsappUserNumber, userState);
             } else if (userInput.toUpperCase() === 'D') {
-              await bot.sendText(msg.from, 'Click this link to speak with Expenditures Buddy!\n\n⬇️ https://wa.link/lezjso \n or type Cancel to return back to the main menu!');
+              await bot.sendText(msg.from, 'Click this link to speak with Expenditures Buddy!\n\n⬇️ https://wa.link/y3k6lb \n or type Cancel to return back to the main menu!');
+              userState = 'START'; // Return to the main menu
+              userStates.set(whatsappUserNumber, userState);
             } else if (userInput.toUpperCase() === 'E') {
               userState = 'INPUT_DATA_2_ANOTHER_USER';
               userStates.set(whatsappUserNumber, userState);
@@ -495,26 +500,28 @@ let userState;
             `);
               }
             } else if (userInput.toUpperCase() === 'D') {
-              userState = 'CHOOSE_9mobile_PLAN';
+              userState = 'CHOOSE_9MOBILE_PLAN';
               userStates.set(whatsappUserNumber, userState);
 
               if (checkUserType.userType === 'business') {
                 await bot.sendText(msg.from, ` \t \t \t 9mobile Data Plans \n
-                a. 9mobile 1GB -> NGN ${nin_mobile_1gb_business} \n
-                b. 9mobile 2GB -> NGN ${nin_mobile_2gb_business} \n
-                c. 9mobile 3GB -> NGN ${nin_mobile_3gb_business} \n
-                d. 9mobile 5GB -> NGN ${nin_mobile_5gb_business} \n
-                e. 9mobile 10GB -> NGN ${nin_mobile_10gb_business} \n
+                a. 9mobile 500MB -> NGN ${nin_mobile_500mb_business} \n
+                b. 9mobile 1GB -> NGN ${nin_mobile_1gb_business} \n
+                c. 9mobile 2GB -> NGN ${nin_mobile_2gb_business} \n
+                d. 9mobile 3GB -> NGN ${nin_mobile_3gb_business} \n
+                e. 9mobile 5GB -> NGN ${nin_mobile_5gb_business} \n
+                f. 9mobile 10GB -> NGN ${nin_mobile_10gb_business} \n
                           
                 Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
               `);
               } else {
                 await bot.sendText(msg.from, ` \t \t \t 9mobile Data Plans \n
-                a. 9mobile 1GB --> NGN ${nin_mobile_1gb} \n
-                b. 9mobile 2GB --> NGN ${nin_mobile_2gb} \n
-                c. 9mobile 3GB --> NGN ${nin_mobile_3gb} \n
-                d. 9mobile 5GB --> NGN ${nin_mobile_5gb} \n
-                e. 9mobile 10GB --> NGN ${nin_mobile_10gb} \n
+                a. 9mobile 1GB -> NGN ${nin_mobile_500mb} \n
+                b. 9mobile 1GB -> NGN ${nin_mobile_1gb} \n
+                c. 9mobile 2GB -> NGN ${nin_mobile_2gb} \n
+                d. 9mobile 3GB -> NGN ${nin_mobile_3gb} \n
+                e. 9mobile 5GB -> NGN ${nin_mobile_5gb} \n
+                f. 9mobile 10GB -> NGN ${nin_mobile_10gb} \n
                           
                 Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
               `);
@@ -548,7 +555,6 @@ let userState;
                   return await buyData(whatsappUserNumber, 'data_share_250mb', mtn_250mb_business, 20000, msg, 'mtn', 'sme', userState, userStates, bot, 1, 216, 1000.0, '01', userInput, 216, 1000.00, 200000, mtn_250mb_business, '250 MB');
                 }
                 return await buyData(whatsappUserNumber, 'data_share_250mb', mtn_250mb, 20000, msg, 'mtn', 'sme', userState, userStates, bot, 1, 216, 1000.0, '01', userInput, 216, 1000.00, 200000, mtn_250mb);
-
                 break;
               case 'B':
                 checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -642,80 +648,68 @@ let userState;
             switch (userInput.toUpperCase()) {
               case 'A':
                 userState = 'INPUT_PHONE_NO';
-                checkUserType = await Users.findOne({ phone: whatsappUser.number });
-                
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
                 if (checkUserType.userType === 'business') {
-                  return await buyData(whatsappUser.number, '9mobile_sme_1gb', nin_mobile_1gb_business, 23, message, '9mobile', 'corporate');
+                  return await buyData(whatsappUserNumber, '9mobile_sme_500mb', nin_mobile_500mb_business, 230000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 279, 500, '03', userInput, 279, 500, 200000, nin_mobile_500mb_business, '500 MB');
                 }
-                await buyData(whatsappUser.number, '9mobile_sme_1gb', nin_mobile_1gb, 23, message, '9mobile', 'corporate');
-
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
+                return await buyData(whatsappUserNumber, '9mobile_sme_500mb', nin_mobile_500mb_business, 23000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 279, 500, '03', userInput, 279, 500, 200000, nin_mobile_500mb_business, '500 MB');
                 break;
               case 'B':
-                userState = 'INPUT_PHONE_NO';
-
-                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
 
                 if (checkUserType.userType === 'business') {
-                  await buyData(whatsappUser.number, '9mobile_sme_2gb', nin_mobile_2gb_business, 25, message, '9mobile', 'corporate');
-                } else {
-                  await buyData(whatsappUser.number, '9mobile_sme_2gb', nin_mobile_2gb, 25, message, '9mobile', 'corporate');
+                  return await buyData(whatsappUserNumber, '9mobile_sme_1gb', nin_mobile_1gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 280, 1000, '03', userInput, 280, 1000, 10000, nin_mobile_1gb_business, '1 GB');
                 }
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
+                return await buyData(whatsappUserNumber, '9mobile_sme_1gb', nin_mobile_1gb, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 280, 1000, '03', userInput, 280, 1000, 10000, nin_mobile_1gb, '1 GB');
                 break;
-
               case 'C':
-                userState = 'INPUT_PHONE_NO';
-                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
 
                 if (checkUserType.userType === 'business') {
-                  await buyData(whatsappUser.number, '9mobile_sme_3gb', nin_mobile_3gb_business, 26, message, '9mobile', 'corporate');
-                } else {
-                  await buyData(whatsappUser.number, '9mobile_sme_3gb', nin_mobile_3gb, 26, message, '9mobile', 'corporate');
+                  return await buyData(whatsappUserNumber, '9mobile_sme_2gb', nin_mobile_2gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 282, 2000, '03', userInput, 282, 2000, 20000, nin_mobile_2gb_business, '2 GB');
                 }
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
+                return await buyData(whatsappUserNumber, '9mobile_sme_2gb', nin_mobile_2gb, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 282, 2000, '03', userInput, 282, 2000, 20000, nin_mobile_2gb, '2 GB');
                 break;
               case 'D':
-                userState = 'INPUT_PHONE_NO';
-                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
 
                 if (checkUserType.userType === 'business') {
-                  await buyData(whatsappUser.number, '9mobile_sme_5gb', nin_mobile_5gb_business, 27, message, '9mobile', 'corporate');
-                } else {
-                  await buyData(whatsappUser.number, '9mobile_sme_5gb', nin_mobile_5gb, 27, message, '9mobile', 'corporate');
+                  return await buyData(whatsappUserNumber, '9mobile_sme_3gb', nin_mobile_3gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 284, 3000, '03', userInput, 284, 3000, 30000, nin_mobile_3gb_business, '3 GB');
                 }
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
+                return await buyData(whatsappUserNumber, '9mobile_sme_3gb', nin_mobile_3gb, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 284, 3000, '03', userInput, 284, 3000, 30000, nin_mobile_3gb, '3 GB');
                 break;
               case 'E':
-                userState = 'INPUT_PHONE_NO';
-                checkUserType = await Users.findOne({ phone: whatsappUser.number });
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
 
                 if (checkUserType.userType === 'business') {
-                  await buyData(whatsappUser.number, '9mobile_sme_10gb', nin_mobile_10gb_business, 28, message, 'glo', 'corporate');
-                } else {
-                  await buyData(whatsappUser.number, '9mobile_sme_10gb', nin_mobile_10gb, 28, message, 'glo', 'corporate');
+                  return await buyData(whatsappUserNumber, '9mobile_sme_5gb', nin_mobile_5gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 224, 5000, '03', userInput, 224, 5000, 50000, nin_mobile_5gb_business, '5 GB');
                 }
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
+                return await buyData(whatsappUserNumber, '9mobile_sme_5gb', nin_mobile_5gb, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 224, 5000, '03', userInput, 224, 5000, 50000, nin_mobile_5gb, '5 GB');
+                break;
+              case 'F':
+                checkUserType = await Users.findOne({ phone: whatsappUserNumber });
+
+                if (checkUserType.userType === 'business') {
+                  return await buyData(whatsappUserNumber, '9mobile_sme_10gb', nin_mobile_10gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 225, 10000, '03', userInput, 225, 10000, 50000, nin_mobile_10gb_business, '10 GB');
+                }
+                return await buyData(whatsappUserNumber, '9mobile_sme_10gb', nin_mobile_10gb_business, 260000, msg, '9mobile', 'corporate', userState, userStates, bot, 3, 225, 10000, '03', userInput, 225, 10000, 50000, nin_mobile_10gb_business, '10 GB');
                 break;
               case 'CANCEL':
-                userState = 'START'; // Return to the main menu
-                userStates.set(whatsappUser.number, userState);
-                message.reply('You have returned to the main menu.  \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance \n d --> For inquirires/partnerships');
+                userState = 'START';
+                userStates.set(whatsappUserNumber, userState);
+                await bot.sendText(msg.from, `Welcome to Expenditures Buddy, your internet data bundles socket! 🤩 \n\n 
+                a --> Fund wallet
+                b --> Buy data
+                c --> Check wallet balance
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
                   console.log(userState);
-                  message.reply("Invalid option. Please enter a, b, c, d, e, f, or g or type 'Cancel' to go back");
-                  break;
+                  await bot.sendText(msg.from, 'Invalid option. Please enter a, b, c, d, e, f, or g or type Cancel to go back');
                 }
+                break;
             }
-            break;
-
           case 'FUND_WALLET':
             const amount = parseFloat(userInput);
             if ((Number.isNaN(amount)) === false) {

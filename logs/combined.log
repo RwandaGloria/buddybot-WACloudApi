@@ -125,3 +125,11 @@
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 10:40:15"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 10:41:32"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 10:42:49"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 11:58:38"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 12:02:08"}
+{"level":"error","service":"user-service","timestamp":"2023-11-27 12:02:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 12:03:36"}
+{"level":"error","service":"user-service","timestamp":"2023-11-27 12:04:24"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 12:05:25"}
+{"level":"error","service":"user-service","timestamp":"2023-11-27 12:05:44"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-27 12:08:10"}
