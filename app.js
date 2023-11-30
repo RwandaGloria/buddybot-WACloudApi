@@ -51,9 +51,7 @@ let userState;
 (async () => {
   try {
     await bot.startExpressServer({
-      webhookVerifyToken,
-      port: 3000,
-      webhookPath: '/custom/webhook',
+      app, port: 9031, webhookVerifyToken: 'hellogloriathisis', webhookPath: '/custom/webhook',
     });
 
     const getAllRegularUserPrices = await regularPrices.find();
@@ -155,12 +153,14 @@ let userState;
         whatsappUserNumber = msg.from;
         let checkUserType;
         // Get the user's state from the global userStates map
+        const user = await Users.findOne({ phone: whatsappUserNumber });
+        if (!user) {
+          const createUser = await Users.create({ phone: whatsappUserNumber, walletBalance: 0, userType: 'regular' });
+        }
         userState = userStates.get(whatsappUserNumber) || 'START';
         const userInput = (msg.data.text || '').toUpperCase();
 
         async function buyData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, message, network, type, userState, userStates, bot, ROSSY_NETWORK_ID, ROSSY_PLAN_ID, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE, userInput, ROSSY_CG_DATA_ID, CLUBKONECT_CG_DATA_ID, PATOMOBILE_CG_DATA_ID, CG_DATA_PRICE, CG_DATA_AMOUNT) {
-          const user = await Users.findOne({ phone: whatsappUserNumber });
-
           // Set the user's state to INPUT_PHONE_NO to await the phone number
           userState = 'INPUT_PHONE_NO';
           userStates.set(whatsappUserNumber, userState);
@@ -796,6 +796,8 @@ app.post('/my-webhook', async (req, res) => {
 app.get('/hi', async (req, res) => {
   res.send('Hello!');
 });
+// app.get('/custom/webhook', async (req, res) => {
+// });
 app.listen(PORT, () => {
   console.log(`Server started successfully at ${PORT}`);
 });
