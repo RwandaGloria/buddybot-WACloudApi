@@ -22,8 +22,6 @@ const expireCoupons = async () => {
   try {
     console.log(`Cron Job Running at ${new Date()}`);
     const twoDaysAgo = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
-    await db.connect();
-
     const transactions = await couponCodes.find({ isExpired: false, isUsed: false, createdAt: { $gt: twoDaysAgo } });
 
     const updatePromises = transactions.map(async (transaction) => {
@@ -77,4 +75,4 @@ const task = cron.schedule('0 0 */2 * *', expireCoupons, { scheduled: true, time
 
 // cronTask.start();
 task.start();
-// module.exports = cronTask;
+module.exports = task;

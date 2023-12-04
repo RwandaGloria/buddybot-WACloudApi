@@ -1,10 +1,12 @@
-const url = require('url');
+const test = require('nigeria-phone-number-validator');
 
-const newUrl = 'https://6f69-102-91-69-194.ngrok-free.app/share?phoneNo=2348166358607&couponCode=lW3Ccma98EjHTMjMUD*3iZxJTE£YPB';
+const result1 = test.validatePhoneNumberSync('08166358607');
+console.log(result1.telco);
+const obj = {
+  '01': 'MTN',
+  '02': 'GLO',
+  '03': '9MOBILE',
+  '04': 'AIRTEL',
+};
 
-const parsedUrl = url.parse(newUrl);
-
-let couponCode;
-const queryParams = new URLSearchParams(parsedUrl.search);
-
-console.log(queryParams.get('couponCode'));
+console.log(result1.telco === obj['01']);

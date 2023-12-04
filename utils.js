@@ -14,9 +14,10 @@
 const axios = require('axios');
 const eventEmitter = require('events');
 const { PhoneNumberUtil } = require('google-libphonenumber');
-const NigerianPhone = require('validate_nigerian_phone');
+// const NigerianPhone = require('validate_nigerian_phone');
 const crypto = require('crypto');
 const validator = require('email-validator');
+const phoneNoValidator = require('nigeria-phone-number-validator');
 const db = require('./db');
 const Users = require('./models/users');
 const logger = require('./logger');
@@ -226,8 +227,8 @@ async function buyFromRossyTech(network_id, phoneNoForPurchase, plan_id) {
 }
 
 async function validateUserPhoneNoNetwork(phonenumber, ROSSY_NETWORK_CODE, CLUBKONECT_MOBILE_NETWORK_CODE) {
-  const phone = new NigerianPhone(phonenumber);
-  const network = phone.getNetwork().toUpperCase();
+  const phone = new phoneNoValidator.validatePhoneNumberSync(phonenumber);
+  const network = phone.telco;
 
   const obj = {
     '01': 'MTN',

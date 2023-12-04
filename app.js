@@ -298,7 +298,7 @@ let userState;
                 b --> Buy data
                 c --> Check wallet balance
                 d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others
+                e --> Share data to others (Beta)
                 `);
               } else {
                 // Handle invalid phone number input
@@ -326,7 +326,7 @@ let userState;
               b --> Buy data
               c --> Check wallet balance
               d --> For inquiries and partnerships.
-              e --> Share data to others  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
             } else {
               const email = msg.data.text;
               const isEmailValidated = await utils.validateEmail(email);
@@ -883,7 +883,7 @@ let userState;
             b --> Buy data
             c --> Check wallet balance
             d --> For inquiries and partnerships.
-            e --> Share data to others  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+            e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
             }
             break;
           case 'ENTER_NUM_LINKS':
@@ -983,7 +983,7 @@ let userState;
               b --> Buy data
               c --> Check wallet balance
               d --> For inquiries and partnerships. \n
-              e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
@@ -1062,7 +1062,7 @@ let userState;
                 b --> Buy data
                 c --> Check wallet balance
                 d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
@@ -1082,7 +1082,7 @@ let userState;
               b --> Buy data
               c --> Check wallet balance
               d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-              e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
             break;
           case 'CHOOSE_NETWORK':
             checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -1210,7 +1210,7 @@ let userState;
               b --> Buy data
               c --> Check wallet balance
               d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-              e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
               userState = 'START';
               userStates.set(whatsappUserNumber, userState);
             }
@@ -1223,7 +1223,7 @@ let userState;
             b --> Buy data
             c --> Check wallet balance
             d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-            e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+            e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
             break;
           case 'CHOOSE_MTN_PLAN':
             switch (userInput.toUpperCase()) {
@@ -1304,7 +1304,7 @@ let userState;
                 b --> Buy data
                 c --> Check wallet balance
                 d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO') || userState === 'ENTER_NUM_LINKS') {
@@ -1383,7 +1383,7 @@ let userState;
                 b --> Buy data
                 c --> Check wallet balance
                 d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO' || userState === 'ENTER_NUM_LINKS')) {
@@ -1482,5 +1482,5 @@ app.get('/hi', async (req, res) => {
 // });
 app.listen(PORT, async () => {
   console.log(`Server started successfully at ${PORT}`);
-  // cronTask.start();
+  cronTask.start();
 });
