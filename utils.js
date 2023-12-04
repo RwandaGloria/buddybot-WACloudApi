@@ -407,7 +407,7 @@ async function isRossyTransactionSuccessful(data) {
   }
   if (data.hasOwnProperty('Status') && data.Status === 'successful') {
     try {
-      await mail.main(`Rossy Transaction Successful - NGN ${data.amount} to ${data.mobile_number}`, `Your Rossy Transaction was successful - NGN ${data.amount} \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
+      await mail.main(`Rossy Transaction Successful - NGN ${data.amount} to ${data.mobile_number}`, `Your Rossy Transaction was successful - NGN ${data.plan_amount} \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
     } catch (err) {
       console.error('Failed to send mail:', err);
     }

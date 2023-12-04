@@ -252,7 +252,7 @@ let userState;
           // Set the user's state to INPUT_PHONE_NO to await the phone number
           userState = 'ENTER_NUM_LINKS';
           userStates.set(whatsappUserNumber, userState);
-          await bot.sendText(whatsappUserNumber, `How many links do you want sent?  \n\n Please take note that if you share two links, you will deducted ${amountInNaira * 2} from your wallet balance.  
+          await bot.sendText(whatsappUserNumber, `How many links do you want sent?  Not more than 50 links at a time.  \n\n Please take note that if you share two links, you will deducted ${amountInNaira * 2} from your wallet balance.  
           \n\n If the 2 users has not claimed the data after 2 days, the data will be returned to your wallet balance. \n\n Please enter in a number or type Cancel to go back.`);
 
           bot.on('message', async (msg) => {
@@ -348,7 +348,6 @@ let userState;
           case 'SHARE_DATA':
             myUser = await Users.findOne({ phone: whatsappUserNumber });
             if (!myUser.email) {
-              console.log('Hi');
               userState = 'ENTER_EMAIL';
               userStates.set(whatsappUserNumber, userState);
               await bot.sendText(whatsappUserNumber, 'Please enter your email address to continue or type Cancel to go back to the main menu! \n\n Your email will be used to send notifications if the user has claimed their data or not!');
@@ -384,6 +383,38 @@ let userState;
                 userState = 'SHARE_MTN_DATA';
                 userStates.set(whatsappUserNumber, userState);
             }
+            break;
+          case 'B':
+            if (myUser.userType === 'business') {
+              // Airtel Plans here!
+              await bot.sendText(msg.from, `Which data plans would you like to share?: \n\n 
+
+            \t \t \t Airtel Data Plans \n\n
+
+            a. 300MB --> N${airtel_300mb_business} \n
+            b. 500MB --> N${airtel_500mb_business} \n
+            c. 1GB --> N${airtel_1gb_business} \n
+            d. 2GB --> N${airtel_2gb_business} \n
+            e. 5GB --> N${airtel_5gb_business} \n
+            f. 10GB --> N${airtel_10gb_business} \n
+
+            Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+          `);
+            } else {
+              await bot.sendText(msg.from, `
+              Which of the data plans would you like to share? \n\n
+            \t \t \t Airtel Data Plans \n\n
+            a. 300 MB --> N${airtel_300mb} \n
+            b. 500 MB --> N${airtel_500mb} \n
+            c. 1GB --> N${airtel_1gb} \n
+            d. 2GB --> N${airtel_2gb} \n
+            e. 5GB --> N${airtel_5gb} \n
+            f. 10GB --> N${airtel_10gb} \n
+            Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+          `);
+            }
+            userState = 'SHARE_AIRTEL_DATA';
+            userStates.set(whatsappUserNumber, userState);
             break;
           case 'SHARE_MTN_DATA':
             if (myUser.userType === 'business') {
@@ -490,6 +521,331 @@ let userState;
               }
             }
             break;
+          case 'C':
+            if (myUser.userType === 'business') {
+              await bot.sendText(msg.from, ` \t \t \t GLO Data Plans \n
+              Which of the data plans would you like to share? \n\n
+
+            a. GLO 200MB --> NGN ${glo_200mb_business} \n
+            b. GLO 500MB --> NGN ${glo_500mb_business} \n
+            c. GLO 1GB --> NGN ${glo_1gb_business} \n
+            d. GLO 2GB --> NGN ${glo_2gb_business} \n
+            e. GLO 3GB --> NGN ${glo_3gb_business} \n
+            f. GLO 5GB --> NGN ${glo_5gb_business} \n
+            g. GLO 10GB --> NGN ${glo_10gb_business} \n
+                      
+            Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+          `);
+            } else {
+              await bot.sendText(msg.from, `Which of the data plans would you like to share? \n\n
+              GLO Data Plans \n
+            a. GLO 200MB --> NGN ${glo_200mb} \n
+            b. GLO 500MB --> NGN ${glo_500mb} \n
+            c. GLO 1GB --> NGN ${glo_1gb} \n
+            d. GLO 2GB --> NGN ${glo_2gb} \n
+            e. GLO 3GB --> NGN ${glo_3gb} \n
+            f. GLO 5GB --> NGN ${glo_5gb} \n
+            g. GLO 10GB --> NGN ${glo_10gb} \n
+                      
+            Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+          `);
+            }
+            userState = 'SHARE_GLO_DATA';
+            userStates.set(whatsappUserNumber, userState);
+            break;
+          case 'D':
+            if (myUser.userType === 'business') {
+              await bot.sendText(msg.from, `Which of the data plans would you like to share? \n\n 9mobile Data Plans \n
+              a. 9mobile 500MB -> NGN ${nin_mobile_500mb_business} \n
+              b. 9mobile 1GB -> NGN ${nin_mobile_1gb_business} \n
+              c. 9mobile 2GB -> NGN ${nin_mobile_2gb_business} \n
+              d. 9mobile 3GB -> NGN ${nin_mobile_3gb_business} \n
+              e. 9mobile 5GB -> NGN ${nin_mobile_5gb_business} \n
+              f. 9mobile 10GB -> NGN ${nin_mobile_10gb_business} \n
+                        
+              Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+            `);
+            } else {
+              await bot.sendText(msg.from, ` Which of the data plans would you like to share? \n \n 9mobile Data Plans \n
+              a. 9mobile 1GB -> NGN ${nin_mobile_500mb} \n
+              b. 9mobile 1GB -> NGN ${nin_mobile_1gb} \n
+              c. 9mobile 2GB -> NGN ${nin_mobile_2gb} \n
+              d. 9mobile 3GB -> NGN ${nin_mobile_3gb} \n
+              e. 9mobile 5GB -> NGN ${nin_mobile_5gb} \n
+              f. 9mobile 10GB -> NGN ${nin_mobile_10gb} \n
+                        
+              Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
+            `);
+            }
+            userState = 'SHARE_9MOBILE_DATA';
+            userStates.set(whatsappUserNumber, userState);
+            break;
+          case 'SHARE_AIRTEL_DATA':
+            if (myUser.userType === 'business') {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = airtel_300mb_business;
+                  data = 0.30;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                case 'B':
+                  amountToShare = airtel_500mb_business;
+                  data = 0.5;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = airtel_1gb_business;
+                  data = 1;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = airtel_2gb_business;
+                  data = 2;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = airtel_5gb_business;
+                  data = 5;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = airtel_10gb_business;
+                  data = 10;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            } else {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = airtel_300mb;
+                  data = 0.30;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'B':
+                  amountToShare = airtel_500mb;
+                  data = 0.5;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = airtel_1gb;
+                  data = 1;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = airtel_2gb;
+                  data = 2;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = airtel_5gb;
+                  data = 5;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = airtel_10gb;
+                  data = 10;
+                  network = 'AIRTEL';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            }
+            break;
+          case 'SHARE_GLO_DATA':
+            if (myUser.userType === 'business') {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = glo_200mb_business;
+                  data = 0.2;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'B':
+                  amountToShare = glo_500mb_business;
+                  data = 0.5;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = glo_1gb_business;
+                  data = 1;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = glo_2gb_business;
+                  data = 2;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = glo_3gb_business;
+                  data = 3;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = glo_5gb_business;
+                  data = 5;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'G':
+                  amountToShare = glo_10gb_business;
+                  data = 10;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            } else {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = glo_200mb;
+                  data = 0.2;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'B':
+                  amountToShare = glo_500mb;
+                  data = 0.5;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = glo_1gb;
+                  data = 1;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = glo_2gb;
+                  data = 2;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = glo_3gb;
+                  data = 3;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = glo_5gb;
+                  data = 5;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                case 'G':
+                  amountToShare = glo_10gb;
+                  data = 10;
+                  network = 'GLO';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            }
+            break;
+          case 'SHARE_9MOBILE_DATA':
+            if (myUser.userType === 'business') {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = nin_mobile_500mb_business;
+                  data = 0.5;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'B':
+                  amountToShare = nin_mobile_1gb_business;
+                  data = 1;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = nin_mobile_2gb_business;
+                  data = 2;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = nin_mobile_3gb_business;
+                  data = 3;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = nin_mobile_5gb_business;
+                  data = 5;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = nin_mobile_10gb_business;
+                  data = 10;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            } else {
+              switch (userInput) {
+                case 'A':
+                  amountToShare = nin_mobile_500mb;
+                  data = 0.5;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'B':
+                  amountToShare = nin_mobile_1gb;
+                  data = 1;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'C':
+                  amountToShare = nin_mobile_2gb;
+                  data = 2;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'D':
+                  amountToShare = nin_mobile_3gb;
+                  data = 3;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'E':
+                  amountToShare = nin_mobile_5gb;
+                  data = 5;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                case 'F':
+                  amountToShare = nin_mobile_10gb;
+                  data = 10;
+                  network = '9MOBILE';
+                  await shareData(amountToShare);
+                  break;
+                default:
+                  break;
+              }
+            }
+            break;
           case 'START':
 
             if (userInput.toUpperCase() === 'A') {
@@ -531,12 +887,15 @@ let userState;
             }
             break;
           case 'ENTER_NUM_LINKS':
-            if (parseInt(userInput, 10) === null) {
+            if (!parseInt(userInput, 10)) {
               await bot.sendText(whatsappUserNumber, 'Invalid message format, enter Cancel to go back to main menu');
             } else if (userInput.toUpperCase() === 'CANCEL') {
               userState = 'START';
               userStates.set(whatsappUserNumber, userState);
             } else {
+              if (parseInt(userInput, 10) > 40) {
+                await bot.sendText(whatsappUserNumber, 'You can\'t share more than 50 links at a time, please enter a number less than 50 or type Cancel to go back to the main menu!');
+              }
               const result = await utils.ifUserCanCreateLink(userInput, amountToShare, user.walletBalance);
               if (result === true) {
                 console.log(msg.data.text);
@@ -702,7 +1061,8 @@ let userState;
                 a --> Fund wallet
                 b --> Buy data
                 c --> Check wallet balance
-                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
@@ -721,7 +1081,8 @@ let userState;
               a --> Fund wallet
               b --> Buy data
               c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+              e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
             break;
           case 'CHOOSE_NETWORK':
             checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -767,6 +1128,8 @@ let userState;
               d. 2GB --> N${airtel_2gb_business} \n
               e. 5GB --> N${airtel_5gb_business} \n
               f. 10GB --> N${airtel_10gb_business} \n
+
+              All plans are valid for 30 days. 
               Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
             `);
               } else {
@@ -778,6 +1141,8 @@ let userState;
               d. 2GB --> N${airtel_2gb} \n
               e. 5GB --> N${airtel_5gb} \n
               f. 10GB --> N${airtel_10gb} \n
+
+              All plans are valid for 30 days. 
               Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
             `);
               }
@@ -807,7 +1172,7 @@ let userState;
               d. GLO 2GB --> NGN ${glo_2gb} \n
               e. GLO 3GB --> NGN ${glo_3gb} \n
               f. GLO 5GB --> NGN ${glo_5gb} \n
-              . GLO 10GB --> NGN ${glo_10gb} \n
+              g. GLO 10GB --> NGN ${glo_10gb} \n
                         
               Enter in either a, b, c, d, e, f for the following plans or type 'Cancel' to go back.
             `);
@@ -844,7 +1209,8 @@ let userState;
               a --> Fund wallet
               b --> Buy data
               c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+              e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
               userState = 'START';
               userStates.set(whatsappUserNumber, userState);
             }
@@ -856,7 +1222,8 @@ let userState;
             a --> Fund wallet
             b --> Buy data
             c --> Check wallet balance
-            d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+            d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+            e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
             break;
           case 'CHOOSE_MTN_PLAN':
             switch (userInput.toUpperCase()) {
@@ -936,7 +1303,8 @@ let userState;
                 a --> Fund wallet
                 b --> Buy data
                 c --> Check wallet balance
-                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO') || userState === 'ENTER_NUM_LINKS') {
@@ -1014,7 +1382,8 @@ let userState;
                 a --> Fund wallet
                 b --> Buy data
                 c --> Check wallet balance
-                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
+                e --> Share data to others. \n\n Please enter one of the following options to get started, a or b or c: \n`);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO' || userState === 'ENTER_NUM_LINKS')) {

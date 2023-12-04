@@ -21,7 +21,7 @@ const limiter = rateLimit({
   windowMs: 10 * 60 * 1000, // 15 minutes
   max: 10, // limit each IP to 100 requests per windowMs
 });
-Router.get('/gift/:link', limiter, async (req, res) => {
+Router.get('/gift/:link', async (req, res) => {
   const { link } = req.params;
   const findLink = await links.findOne({ link });
 
@@ -36,7 +36,7 @@ Router.get('/gift/:link', limiter, async (req, res) => {
   return res.status(500).send('Something went wrong, please try again later!');
 });
 
-Router.get('/share/:data/:network', limiter, async (req, res) => {
+Router.get('/share/:data/:network', async (req, res) => {
   const { phoneNo } = req.query;
   const { couponCode } = req.query;
   const { data } = req.params;

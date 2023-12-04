@@ -1128,3 +1128,11 @@
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:44:51"}
 {"_message":"links validation failed","errors":{"linkDateExpiry":{"kind":"required","message":"Path `linkDateExpiry` is required.","name":"ValidatorError","path":"linkDateExpiry","properties":{"message":"Path `linkDateExpiry` is required.","path":"linkDateExpiry","type":"required"}},"linkUsedDate":{"kind":"required","message":"Path `linkUsedDate` is required.","name":"ValidatorError","path":"linkUsedDate","properties":{"message":"Path `linkUsedDate` is required.","path":"linkUsedDate","type":"required"}}},"level":"error","service":"user-service","timestamp":"2023-12-04 13:45:17"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:46:31"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:52:23"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:57:37"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:59:52"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 14:06:21"}
+{"level":"error","message":{"error":{"code":100,"fbtrace_id":"Aaufj0st8B3wxjA9QaJjU-R","message":"(#100) Param text['body'] must be at most 4096 characters long.","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-04 14:08:58"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 16:54:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 16:56:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 17:23:17"}
