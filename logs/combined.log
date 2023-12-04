@@ -152,3 +152,979 @@
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-28 07:42:22"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-28 07:42:27"}
 {"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-11-28 07:42:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:20:35"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:33:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:40:51"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:42:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:44:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:48:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:50:59"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:52:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:52:21"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:57:52"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:58:59"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 13:59:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:01:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:14:59"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:19:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:19:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:20:09"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:20:39"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"AiG-SOH0FRfBhRjMTgPdKOL","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:20:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:21:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:21:40"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"ADaAw8nfIVbLdpqmQ9UCfUp","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:21:44"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:22:29"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"A1y1miIknzslxQdFcRpfMTf","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:22:38"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:24:41"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"AEqp21LhaLhVk_BAtONSnNk","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:24:47"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:26:33"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"A8XfqmIgf5Inzu7b6qPunyL","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:26:37"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:28:23"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"A-4IZdmcaBmJPW9hHUhRwLA","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:28:31"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"A0st5l4oApGx02pk5uxeMWK","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:29:31"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:53:37"}
+{"level":"error","message":{"error":{"code":131030,"error_data":{"details":"Recipient phone number not in allowed list: Add recipient phone number to recipient list and try again.","messaging_product":"whatsapp"},"fbtrace_id":"AcVq97SGM_19JHEWjEvY_LD","message":"(#131030) Recipient phone number not in allowed list","type":"OAuthException"}},"service":"user-service","timestamp":"2023-12-01 14:54:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:55:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:55:57"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:56:26"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:57:22"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:58:12"}
+{"level":"error","service":"user-service","timestamp":"2023-12-01 14:58:43"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 14:59:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 15:06:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 15:07:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 15:27:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 16:05:25"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 16:52:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 17:02:26"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 17:06:33"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 17:17:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 17:17:56"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 17:39:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:00:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:00:59"}
+{"level":"info","message":"Error in storeCouponsInArray function: generateCouponCode is not defined","service":"user-service","timestamp":"2023-12-01 18:01:20"}
+{"level":"info","message":"Error in generateURL: couponCodes is not defined","service":"user-service","timestamp":"2023-12-01 18:01:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:01:24"}
+{"level":"info","message":"Error in storeCouponsInArray function: generateCouponCode is not defined","service":"user-service","timestamp":"2023-12-01 18:02:19"}
+{"level":"info","message":"Error in generateURL: couponCodes validation failed: amount: Path `amount` is required., senderPhoneNo: Path `senderPhoneNo` is required., couponCode: Path `couponCode` is required.","service":"user-service","timestamp":"2023-12-01 18:02:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:02:24"}
+{"level":"info","message":"Error in generateURL: storeCouponsToArray is not defined","service":"user-service","timestamp":"2023-12-01 18:08:14"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:08:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-01 18:23:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 06:57:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 06:59:57"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:05:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:10:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:11:31"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:14:47"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:16:56"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:17:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:18:24"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:19:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:19:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:20:40"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:20:57"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:21:24"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:23:41"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:31:39"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:32:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:33:51"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:34:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:37:23"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:39:37"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:40:38"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:42:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:44:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:45:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 07:48:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:11:37"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:13:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:16:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:39:09"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:40:26"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:41:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:43:33"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:48:11"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:48:33"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:55:27"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 08:58:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:04:27"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:27:23"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:36:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:37:15"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:37:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:43:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:47:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 09:59:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:10:58"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:14:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:35:35"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:41:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:43:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:51:27"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 10:56:09"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 10:56:33"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:13:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:14:53"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:23:38"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 11:24:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:25:15"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:34:39"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 11:55:48"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:01:46"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:03:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:04:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:07:28"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:09:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:10:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:12:43"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 12:13:27"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 13:42:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 13:45:28"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 13:46:39"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 13:51:50"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:04:33"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:29:54"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:32:21"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:35:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:37:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:39:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:43:53"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:44:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:46:54"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:49:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:50:10"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 14:52:43"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 15:09:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 15:18:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 15:18:55"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 15:49:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 15:59:56"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:03:37"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:04:15"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:10:56"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:15:08"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:15:09"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:16:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:16:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:17:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:18:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:19:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:20:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:21:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:22:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:22:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:26:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:27:50"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:28:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:40:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:40:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:41:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:42:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:43:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:44:04"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:44:05"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:44:59"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:45:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:45:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:45:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:46:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:46:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:46:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:46:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:47:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:47:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:48:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:48:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:48:04"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:48:05"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:49:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:49:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:50:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:50:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:50:04"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:50:05"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:51:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:51:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:51:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:51:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:52:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:52:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:52:04"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:52:05"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:53:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:53:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:53:05"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:53:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:54:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:54:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:54:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:54:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:55:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:55:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-02 16:55:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:55:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:56:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:56:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:56:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:56:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:57:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:57:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:57:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:57:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:58:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:58:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:58:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:58:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:59:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 16:59:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:59:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 16:59:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:00:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:00:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:00:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:00:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:01:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:01:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:01:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:01:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:02:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:02:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:02:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:02:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:03:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:03:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:03:04"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:03:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:04:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:04:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:04:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:04:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:05:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:05:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:05:04"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:05:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:06:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:06:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:06:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:06:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:07:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:07:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:07:03"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:07:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:08:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:08:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:08:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:08:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:09:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:09:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:10:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:10:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:11:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:11:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:12:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:12:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:13:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:13:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:14:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:14:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:15:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:16:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:16:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:17:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:18:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:19:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:20:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:21:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:22:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:22:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:23:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:23:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:24:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:24:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:25:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:26:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:26:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:28:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:30:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:30:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:33:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:34:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:35:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:36:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:37:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:38:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:39:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:40:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:40:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:41:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:42:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:43:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:44:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:44:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:45:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:46:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:46:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:47:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:47:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:48:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:48:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:49:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:49:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:50:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:50:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:51:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:51:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:52:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:52:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:53:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:53:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:54:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:54:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:55:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:55:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:56:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:56:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:57:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:57:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:58:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:58:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 17:59:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 17:59:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:00:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:00:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:01:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:01:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:02:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:02:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:03:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:03:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:04:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:04:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:05:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:05:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:06:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:06:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:07:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:07:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:08:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:08:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:09:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:09:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:10:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:10:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:11:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:11:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:12:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:12:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:13:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:13:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:14:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:14:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:15:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:16:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:16:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:17:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:18:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:19:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:20:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:21:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:22:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:22:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:23:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:23:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:24:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:24:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:25:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:26:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:26:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:28:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:30:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:30:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:33:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:34:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:35:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:36:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-02 18:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-02 18:37:01"}
+{"level":"info","message":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 19:13:00"}
+{"level":"error","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":"7fffffff000000000000001a","maxSetVersion":2,"servers":{},"setName":"atlas-g3wybl-shard-0","stale":false,"type":"ReplicaSetNoPrimary"},"service":"user-service","timestamp":"2023-12-03 19:13:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:14:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:14:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:15:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:16:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:16:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:17:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:18:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:19:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:20:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:21:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:22:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:22:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:23:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:23:09"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:24:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:24:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:25:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:26:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:26:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:28:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:29:05"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:30:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:30:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:31:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:32:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:33:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:34:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:35:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:36:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:37:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:38:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:39:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:40:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:40:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:41:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 19:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 19:42:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:15:04"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:15:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:15:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:17:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:17:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:17:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:19:02"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:19:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:19:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:21:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:21:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:21:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:23:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:23:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:23:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:23:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:25:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:25:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:25:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:27:00"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:27:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:27:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:29:00"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:29:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:29:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:31:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:31:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:31:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:33:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:33:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:33:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:35:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:35:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:35:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:37:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:37:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:37:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:39:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:39:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:39:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:41:04"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:41:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:41:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:43:05"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:43:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:43:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:45:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:45:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:45:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:47:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:47:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:47:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:47:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:49:00"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:49:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:50:27"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:50:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:52:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:52:00"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:52:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:52:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:54:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:54:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:54:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:54:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:56:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:56:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:56:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:56:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 20:58:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:58:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 20:58:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 20:58:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:00:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:00:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:00:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:00:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:02:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:02:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:02:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:02:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:04:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:04:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:04:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:04:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:06:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:06:02"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:06:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:06:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:08:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:08:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:08:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:08:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:10:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:10:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:10:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:10:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:13:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:13:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:13:16"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:13:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:15:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:15:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:15:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:17:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:17:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:17:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 21:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:19:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 21:19:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 21:19:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 22:16:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 22:16:03"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 22:16:07"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 22:16:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 22:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 22:18:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 22:18:15"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 22:18:16"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 22:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 22:20:01"}
+{"level":"info","message":"querySrv ETIMEOUT _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 23:24:48"}
+{"level":"info","message":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-03 23:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:25:06"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:25:13"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:26:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:26:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:28:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:30:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:30:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:32:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:32:42"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:34:19"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:35:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:36:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:38:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:38:43"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-03 23:39:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:40:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-03 23:40:06"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:27:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:28:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:29:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:30:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 00:30:10"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:30:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:32:24"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:33:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:33:16"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 00:34:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:34:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:35:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:35:31"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:36:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:37:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:37:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:38:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:39:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:40:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:40:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:40:25"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 00:40:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:41:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:41:30"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 00:41:48"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:42:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:43:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:44:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:44:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:45:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:46:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:46:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:47:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:47:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:48:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:48:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:49:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:49:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 00:50:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 00:50:00"}
+{"level":"info","message":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-04 08:11:00"}
+{"level":"error","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":"7fffffff000000000000001b","maxSetVersion":2,"servers":{},"setName":"atlas-g3wybl-shard-0","stale":false,"type":"ReplicaSetNoPrimary"},"service":"user-service","timestamp":"2023-12-04 08:11:30"}
+{"level":"info","message":"querySrv ECONNREFUSED _mongodb._tcp.cluster0.tfvswdr.mongodb.net","service":"user-service","timestamp":"2023-12-04 08:12:00"}
+{"level":"error","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":null,"maxElectionId":"7fffffff000000000000001b","maxSetVersion":2,"servers":{},"setName":"atlas-g3wybl-shard-0","stale":false,"type":"ReplicaSetNoPrimary"},"service":"user-service","timestamp":"2023-12-04 08:12:30"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:13:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:13:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:14:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:14:02"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:14:04"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 08:14:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:15:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:15:18"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:16:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:16:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:17:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:18:15"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:19:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:21:52"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:22:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:23:12"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:24:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:24:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:25:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:25:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:26:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:26:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:27:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:28:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:28:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:28:44"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:29:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:29:25"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:30:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:30:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:31:45"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:32:01"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:32:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:33:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:33:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:34:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:34:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:35:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:35:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:35:54"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:36:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:37:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:38:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:39:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:40:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:40:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:40:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:41:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:41:25"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:42:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:43:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:44:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:44:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:45:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:45:11"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:46:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:46:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:47:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:47:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:48:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:48:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:49:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:49:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:50:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:50:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:51:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:51:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:52:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:52:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:53:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:53:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:54:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:54:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:55:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:55:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:56:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:56:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:57:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:57:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:58:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:58:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 08:59:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 08:59:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:00:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:00:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:01:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:01:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:02:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:02:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:03:14"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:04:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:04:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:04:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:05:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:05:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:06:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:06:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:07:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:07:11"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:08:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:08:32"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:09:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:10:26"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 09:11:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 09:11:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:02:36"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:03:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 11:03:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:38:49"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:39:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:40:23"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:41:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:42:25"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:43:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:44:28"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 11:45:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:02:07"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:03:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:03:02"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:04:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:04:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:05:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:05:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:06:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:06:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:07:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:07:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:08:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:08:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:09:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:09:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:10:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:10:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:11:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:11:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:12:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:12:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:13:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:13:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:14:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:14:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:15:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:15:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:17:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:17:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:18:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:18:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:19:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:19:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:19:24"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:20:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:20:04"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:21:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:21:03"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:23:20"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:24:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:24:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:25:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:25:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:26:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:26:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:27:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:27:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:28:00"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:28:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:28:14"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:29:00"}
+{"level":"error","message":"No link found!","service":"user-service","timestamp":"2023-12-04 12:29:01"}
+{"level":"error","service":"user-service","timestamp":"2023-12-04 12:29:01"}
+{"level":"error","message":"No link found!","service":"user-service","timestamp":"2023-12-04 12:29:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:30:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:30:03"}
+{"level":"error","message":"No link found!","service":"user-service","timestamp":"2023-12-04 12:30:06"}
+{"level":"error","message":"No link found!","service":"user-service","timestamp":"2023-12-04 12:30:06"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:30:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:31:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:31:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:32:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:32:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:33:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:33:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:34:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:34:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:36:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:36:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:37:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:37:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:38:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:38:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:39:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:39:00"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:40:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:40:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:41:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:41:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:42:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:42:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:43:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:43:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:44:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:44:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 12:45:00"}
+{"level":"info","message":"Updated DB completed!","service":"user-service","timestamp":"2023-12-04 12:45:01"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:19:08"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:20:04"}
+{"code":"EENVELOPE","command":"API","level":"error","service":"user-service","timestamp":"2023-12-04 13:21:10"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:26:29"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:27:34"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:41:05"}
+{"_message":"links validation failed","errors":{"linkDateExpiry":{"kind":"required","message":"Path `linkDateExpiry` is required.","name":"ValidatorError","path":"linkDateExpiry","properties":{"message":"Path `linkDateExpiry` is required.","path":"linkDateExpiry","type":"required"}},"linkUsedDate":{"kind":"required","message":"Path `linkUsedDate` is required.","name":"ValidatorError","path":"linkUsedDate","properties":{"message":"Path `linkUsedDate` is required.","path":"linkUsedDate","type":"required"}}},"level":"error","service":"user-service","timestamp":"2023-12-04 13:43:50"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:44:51"}
+{"_message":"links validation failed","errors":{"linkDateExpiry":{"kind":"required","message":"Path `linkDateExpiry` is required.","name":"ValidatorError","path":"linkDateExpiry","properties":{"message":"Path `linkDateExpiry` is required.","path":"linkDateExpiry","type":"required"}},"linkUsedDate":{"kind":"required","message":"Path `linkUsedDate` is required.","name":"ValidatorError","path":"linkUsedDate","properties":{"message":"Path `linkUsedDate` is required.","path":"linkUsedDate","type":"required"}}},"level":"error","service":"user-service","timestamp":"2023-12-04 13:45:17"}
+{"level":"info","message":"Connected to MongoDB successfully","service":"user-service","timestamp":"2023-12-04 13:46:31"}

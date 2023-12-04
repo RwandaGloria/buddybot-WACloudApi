@@ -1,7 +1,10 @@
-const func = require('./utils');
+const url = require('url');
 
-async function getResult() {
-  const result = await func.validateUserPhoneNoNetwork('08166358607', 2, '04');
-  console.log(result.message);
-}
-getResult();
+const newUrl = 'https://6f69-102-91-69-194.ngrok-free.app/share?phoneNo=2348166358607&couponCode=lW3Ccma98EjHTMjMUD*3iZxJTE£YPB';
+
+const parsedUrl = url.parse(newUrl);
+
+let couponCode;
+const queryParams = new URLSearchParams(parsedUrl.search);
+
+console.log(queryParams.get('couponCode'));

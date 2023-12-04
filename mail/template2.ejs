@@ -1,0 +1,154 @@
+//The templates here are used to send emails that contain breakdown info of the links that the user has created via email. 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Professional Email Title</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif; /* Use a standard font for professionalism */
+      line-height: 1.6;
+      color: #333; /* Dark text color for readability */
+    }
+
+    header {
+      background-color: #6a0dad; /* Purple background color */
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9; /* Light gray background for the main content */
+    }
+
+    h1 {
+      color: #6a0dad; /* Purple heading color */
+    }
+
+    p {
+      color: #555; /* Slightly muted text color for a professional look */
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #6a0dad; /* Purple button color */
+      color: #fff; /* White text color for contrast */
+      text-decoration: none;
+      border-radius: 3px;
+      margin-top: 20px;
+    }
+
+    .cta-button:hover {
+      background-color: #4b0082; /* Darker purple on hover */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .total-field {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #888;
+    }
+
+    @media only screen and (max-width: 600px) {
+      main {
+        padding: 10px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="your-logo-url" alt="Your Logo">
+  </header>
+
+  <main>
+    <h1>Your <%= dynamicHeading %></h1>
+    <p>
+      Dear <%= customerName %>,
+    </p>
+    <p>
+      <%= emailContent %>
+    </p>
+
+    <!-- Inserted Table Here -->
+    <table>
+      <thead>
+        <tr>
+          <th>Link</th>
+          <th>Used By</th>
+          <th>Status</th>
+          <th>Time of Expiry or Use</th>
+          <th>Data Amount</th>
+          <th>Data GB</th>
+          <th>Amount (Naira)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data from server using EJS -->
+        <% for (let link of links) { %>
+          <tr>
+            <td><a href="<%= link.url %>" target="_blank"><%= link.url %></a></td>
+            <td><%= link.usedBy %></td>
+            <td><%= link.status %></td>
+            <td><%= link.time %></td>
+            <td><%= link.dataAmount %></td>
+            <td><%= link.dataGB %></td>
+            <td>₦<%= link.amount %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <!-- End of Table -->
+
+    <!-- Total Data Expired and Total Data Used Fields -->
+    <p class="total-field">Total Data Expired: <%= totalExpired %> GB</p>
+    <p class="total-field">Total Data Used: <%= totalUsed %> GB</p>
+
+    <p>
+      Best regards,<br>
+      Gloria
+    </p>
+  </main>
+
+  <footer>
+    © 2023 Expenditures Buddy.  All rights reserved.
+  </footer>
+</body>
+</html>

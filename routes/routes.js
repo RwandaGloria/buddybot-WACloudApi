@@ -1,70 +1,63 @@
+/* eslint-disable max-len */
 /* eslint-disable camelcase */
 /* eslint-disable no-console */
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
+require('dotenv').config();
 const express = require('express');
 const app = require('../app');
 const User = require('../models/users');
 
 const Router = express.Router();
 const user_prompts = require('./user_prompts');
+const links = require('../models/links');
+const couponCodes = require('../models/coupon_codes');
+const { generateRandomFiveDigitAlphaNumericDigits } = require('../utils');
+const rateLimit = require('express-rate-limit');
 
-app.post('/my-webhook', async (req, res) => {
-  try {
-    console.log('Visited!');
+const { MY_BOT_PHONE_NUMBER } = process.env;
 
-    const { body } = req;
-    const customer_phone_num = body.data.metadata.phone_no;
-
-    const { chatId } = body.data.metadata;
-    console.log(chatId);
-
-    console.log(req.body);
-    // paystack writes in kobo
-    const nairaAmount = body.data.amount / 100;
-    console.log(`nairaAmount is ${nairaAmount}`);
-
-    if (body.event === 'charge.success') {
-      const user = await User.findOne({ phone: customer_phone_num });
-
-      console.log(user);
-      const { walletBalance } = user;
-      const verifyTransactionStatus = await user_prompts.verifyTransaction(body.data.reference);
-      console.log(verifyTransactionStatus);
-      const TRANSACTION_CHARGE = 50;
-
-      if (verifyTransactionStatus === true) {
-        const updatedUser = await User.findOneAndUpdate(
-          { phone: customer_phone_num },
-          { $inc: { walletBalance: nairaAmount - TRANSACTION_CHARGE } },
-          { new: true },
-        );
-
-        const newTransaction = await Transaction.create({
-          user_phoneNumber: `${customer_phone_num}`,
-          amount: nairaAmount - TRANSACTION_CHARGE,
-          txntype: 'credit',
-          details: {
-            desc: 'Funded Wallet ',
-            amount: `${nairaAmount}`,
-            ref_id: body.data.id,
-          },
-        });
-
-        console.log(updatedUser);
-        await client.sendMessage(chatId, `You have successfully funded your wallet with ${nairaAmount}. Your wallet Balance is now ${updatedUser.walletBalance} NGN. \n You can proceed with your transactions. 🙌🥳✊🎉  \n 
-        a --> Fund wallet \nx
-          b --> Buy data \n
-          c --> Check wallet balance \n d --> For inquiries/partnerships \n Please enter one of the following options, 1 or 2 or 7`);
-
-        res.send(200);
-        userStates.set(customer_phone_num, 'START');
-      } else {
-        res.send("There's something wrong with payment, sorry, try again! 😔");
-      }
-    }
-  } catch (err) {
-    console.error(err);
-    res.sendStatus(500);
-  }
+const limiter = rateLimit({
+  windowMs: 10 * 60 * 1000, // 15 minutes
+  max: 10, // limit each IP to 100 requests per windowMs
 });
+Router.get('/gift/:link', limiter, async (req, res) => {
+  const { link } = req.params;
+  const findLink = await links.findOne({ link });
+
+  if (!findLink) {
+    return res.status(404).send('That link doesn\'t exist');
+  }
+  if (findLink.isLinkExpired === true) {
+    return res.status(404).send('That link has expired');
+  } if (findLink.isLinkExpired === false) {
+    return res.status(302).redirect(findLink.linkRedirectTo);
+  }
+  return res.status(500).send('Something went wrong, please try again later!');
+});
+
+Router.get('/share/:data/:network', limiter, async (req, res) => {
+  const { phoneNo } = req.query;
+  const { couponCode } = req.query;
+  const { data } = req.params;
+  const { network } = req.params;
+  const coupon = await couponCodes.findOne({ couponCode });
+  if (!coupon) {
+    return res.status(404).send('Link has expired!');
+  }
+  const updateCoupon = await couponCodes.findOneAndUpdate({ couponCode }, { $set: { dataAmount: data, network } });
+
+  if (coupon.isExpired === true) {
+    return res.status(404).send('Link has expired!');
+  }
+  if (coupon.isUsed === true) {
+    return res.status(404).send('This Link can only be used once!');
+  }
+  if (coupon.isUsed === false && coupon.isExpired === false) {
+    const URL = `https://api.whatsapp.com/send?phone=${MY_BOT_PHONE_NUMBER}&text=${phoneNo}%20gifted%20me%20some%20data!%20My%20coupon%20code%20is%20${couponCode}`;
+    return res.redirect(302, URL);
+  }
+  return res.status(500).send('Something went wrong, please try again later!');
+});
+
+module.exports = Router;

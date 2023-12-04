@@ -15,6 +15,8 @@ const axios = require('axios');
 const eventEmitter = require('events');
 const { PhoneNumberUtil } = require('google-libphonenumber');
 const NigerianPhone = require('validate_nigerian_phone');
+const crypto = require('crypto');
+const validator = require('email-validator');
 const db = require('./db');
 const Users = require('./models/users');
 const logger = require('./logger');
@@ -22,6 +24,7 @@ const Transaction = require('./models/transactions');
 const transaction = require('./models/transactions');
 const couponCodes = require('./models/coupon_codes');
 const links = require('./models/links');
+const mail = require('./mail/config');
 
 require('dotenv').config();
 
@@ -31,6 +34,7 @@ const { DATAAVE_API_KEY } = process.env;
 const { PHONE_NO_WHATSAPP_MSG } = process.env;
 const { MY_DOMAIN_NAME } = process.env;
 const { ROSSYTECH_API_KEY } = process.env;
+const { USER_ADMIN_EMAIL_ADDDR } = process.env;
 
 const messageTemplate = 'Please press 1 to enter fund wallet\nPress 2 to Buy Data\nPress 3 to make inquiries or to make a bot for your business.';
 
@@ -115,8 +119,6 @@ async function buyFromPatoMobile(PATOMOBILE_ID, phoneNumber, network, type, Pato
     const stringedData = JSON.stringify(PatoMobileResponse.data, null, 2);
     console.log(network);
 
-    console.log(PatoMobileResponse.data);
-    console.log(`${PatoMobileResponse.data}`);
     let updatedUser;
 
     const JSONData = PatoMobileResponse.data;
@@ -128,105 +130,45 @@ async function buyFromPatoMobile(PATOMOBILE_ID, phoneNumber, network, type, Pato
   }
 }
 
-async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, phoneNumber, network, type, ROSSY_NETWORK_ID, ROSSY_PLAN_ID, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE, CG_DATA_ID, ROSSY_CG_DATA_ID, CLUBKONECT_CG_DATA_ID, PATOMOBILE_CG_DATA_ID, CG_DATA_PRICE, CG_DATA_AMOUNT) {
-  // number --> Whatsapp User number
-  // phone --> Phone Number you want to send data to.
+async function fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, phoneNumber, network, type, ROSSY_NETWORK_ID, ROSSY_PLAN_ID, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE) {
   try {
-    console.log(`Clubkonnect is ${CLUBKONECT_MOBILE_NETWORK_CODE}`);
     const user = await Users.findOne({ phone: whatsappUserNumber });
-    const checkUserWalletBalance = await checkUserBalance(whatsappUserNumber, price);
-    if (checkUserWalletBalance === false) {
-      return `You have insufficient funds in your wallet to make this transaction, as your wallet balance is only ${user.walletBalance} NGN. \n\n Please enter a to fund your wallet.`;
-    }
+    const checkUserWalletBalance = await checkUserBalance(user.walletBalance, price);
 
-    const JSONData = await buyFromPatoMobile(DataAvenuePrice_ID, phoneNumber, price, whatsappUserNumber, network, type, PatoMobile_data_id);
-
-    if (JSONData.Successful === 'true') {
-      console.log('It has response ---> So its successful!');
-      updatedUser = await Users.findOneAndUpdate(
-        { phone: whatsappUserNumber },
-        { $inc: { walletBalance: -price } },
-        { new: true },
-      );
-      const newTransaction = await Transaction.create({
-        user_phoneNumber: `${whatsappUserNumber}`,
-        amount: price,
-        txntype: 'debit',
-        details: {
-          desc: `${network} Data Purchase`,
-          amount: `${price}`,
-          ref_id: 'random',
-        },
-      });
-
-      return `${JSONData.Data_Plan} Data sent successfully to ${phoneNumber}! Check data balance. Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
+    if (!checkUserWalletBalance) {
+      return `You have insufficient funds in your wallet to make this transaction, as your wallet balance is only ${user.walletBalance} NGN. \n\n Please enter 'a' to fund your wallet.`;
     }
 
     const rossyResponse = await buyFromRossyTech(ROSSY_NETWORK_ID, phoneNumber, ROSSY_PLAN_ID);
-    const rossyResponseData = rossyResponse;
-    // const rossyResponse = {
-    //   status: 'MTN SME Data service is currently down, please select the MTN Corporate option',
-    // };
+    const checkIfRossyTransactionIsSuccessful = await isRossyTransactionSuccessful(rossyResponse);
 
-    const checkIfRossyTransactionIsSuccessful = await isRossyTransactionSuccessful(rossyResponseData);
-
-    if (checkIfRossyTransactionIsSuccessful === true) {
-      updatedUser = await Users.findOneAndUpdate(
+    if (checkIfRossyTransactionIsSuccessful) {
+      await Users.findOneAndUpdate(
         { phone: whatsappUserNumber },
         { $inc: { walletBalance: -price } },
         { new: true },
       );
-      return `${rossyResponseData.plan_network} ${rossyResponseData.plan_name} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
+
+      return `${rossyResponse.plan_network} ${rossyResponse.plan_name} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${user.walletBalance - price} NGN. \n\nYou can enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
     }
-
     const clubKonectResponse = await clubKonect(phoneNumber, CLUBKONNECT_DATAPLAN, CLUBKONECT_MOBILE_NETWORK_CODE);
-    console.log('CLUBKONNECT -----------> ');
-    console.log(`${CLUBKONNECT_DATAPLAN}is the code`);
-    console.log(clubKonectResponse);
-
     const result = isClubKonnectTransactionSuccessful(clubKonectResponse);
 
     if (result === true) {
-      console.log('true');
+      await Users.findOneAndUpdate(
+        { phone: whatsappUserNumber },
+        { $inc: { walletBalance: -price } },
+        { new: true },
+      );
     } else if (result === false) {
-      console.log('false');
+      return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
     } else {
       console.log(result);
     }
-
-    // const updatedUser = awa
-
-    // console.log(clubKonectResponse);
-    // console.log(typeof (clubKonectResponse));
-
-    // if (isClubKonnectTransactionSuccessful(clubKonectResponse) === true) {
-    //   updatedUser = await Users.findOneAndUpdate(
-    //     { phone: whatsappUserNumber },
-    //     { $inc: { walletBalance: -price } },
-    //     { new: true },
-    //   );
-    //   return `${clubKonectResponse.mobilenetwork} ${clubKonectResponse.productname} Data sent successfully to ${phoneNumber} \n\n Your new wallet balance is ${updatedUser.walletBalance} NGN. \n\nYou can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance`;
-    // }
-
-    // console.log(clubKonectResponse);
-    // logger.log({
-    //   level: 'error',
-    //   message: `Error connecting to ClubKonnect: ${clubKonectResponse}`,
-    // });
-    // else {
-    //   console.log(isClubKonnectTransactionSuccessful(clubKonectResponse));
-    // }
-    return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
-
-    // Handle buying CG data.
-    // await buyCGData(whatsappUserNumber, phoneNumber, ROSSY_CG_DATA_ID, ROSSY_NETWORK_ID, CLUBKONECT_MOBILE_NETWORK_CODE, CLUBKONECT_CG_DATA_ID, CG_DATA_PRICE, CG_DATA_AMOUNT, userState, userStates);
-
-    // await bot.sendText(whatsappUserNumber, `We are really sorry but right now you can't purchase that data.  You can buy this data, we have this ${CG_DATA_AMOUNT} for ${CG_DATA_PRICE} NGN. \n\n Enter Y to buy this data or enter Cancel to return to the main menu.}`);
-    // return `Boss! we're sorry you can't buy data at this time. There is a problem from our side. You can try going back to the main menu to buy CG data or try again in some minutes please. Thank you for your understanding! 🤲`
   } catch (err) {
     console.log(err);
     logger.error(err.message);
-    return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
+    return 'Sorry, we are unable to process your request at this time. Please try again later. \n\n You can enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
   }
 }
 
@@ -427,11 +369,10 @@ async function buyDataFromDataAvenue(DataAvenuePrice_ID, phoneNumber, price, wha
   return 'Sorry, it seems something is wrong with our data providers. Please again later. \n You can Enter in any of the following:   \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance';
 }
 
-async function checkUserBalance(whatsappUserNumber, amount) {
-  const user = await Users.findOne({ phone: whatsappUserNumber.toString() });
-  console.log(user);
+async function checkUserBalance(walletBalance, amount) {
+  // const user = await Users.findOne({ phone: whatsappUserNumber.toString() });
 
-  if (user.walletBalance >= amount) {
+  if (walletBalance >= amount) {
     return true;
   }
 
@@ -443,133 +384,6 @@ function generateRandomReferenceID() {
   return randomID.toString();
 }
 
-// async function generateRandomNumbersForCoupon() {
-//   try {
-//     const length = 6;
-//     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     let couponCode = '';
-
-//     for (let i = 0; i < length; i++) {
-//       const randomIndex = Math.floor(Math.random() * characters.length);
-//       couponCode += characters.charAt(randomIndex);
-//     }
-
-//     return couponCode;
-//   } catch (err) {
-//     console.log(err);
-//     logger.error(err);
-//     return res.status(500).send(err);
-//   }
-// }
-
-async function generateCouponCodeAndSaveToDb(phoneNo, dataAmount) {
-  try {
-  // generate six digit coupon code and save to the database
-    const sixDigitCouponCode = await generateRandomNumbersForCoupon();
-
-    // couponCode=234 567
-    // phoneNumber
-    // create new coupon code.
-    const createCodeInDB = await couponCodes.create({
-      couponCode: sixDigitCouponCode,
-      senderPhoneNo: phoneNo,
-      dataAmount,
-    });
-
-    return createCodeInDB.couponCode;
-  } catch (err) {
-    logger.error(err);
-    console.log(err);
-    return res.status(500).send(err);
-  }
-}
-
-async function sendCouponCodeURLToExpBuddy(whatsappName, whatsappUserNumber, dataAmount) {
-  try {
-    const couponCode = await generateCouponCodeAndSaveToDb(whatsappUserNumber, dataAmount);
-
-    const url = `https://api.whatsapp.com/send?phone=${PHONE_NO_WHATSAPP_MSG}&text=Hi!%20I%27m%20from%20${whatsappName}!%20I%27ve%20been%20selected%20as%20part%20of%20the%20giveaway%2C%20my%20coupon%20code%20is%${couponCode.couponCode}`;
-
-    // then create links (branded) -->
-
-    const newLink = await links.create({
-      link: `${couponCode}`,
-      linkRedirectTo: url,
-    });
-    return `${MY_DOMAIN_NAME}/data/${newLink.link}`;
-  } catch (err) {
-    logger.error(err);
-    console.log(err);
-    return res.status(400).send('Sorry! Something went wrong! ');
-  }
-}
-
-// async function buyData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, message, network, type, userState, userStates) {
-
-//   const user = await Users.findOne({ phone: whatsappUserNumber });
-
-//   console.log(DataAvenuePrice_ID);
-//   console.log(price);
-//   console.log(PatoMobile_data_id)
-
-//   //WhatsappUserNumber
-
-//   //price is the price for mtn_1gb from the prices.json file.
-//   //PatoMobile_data_id is the data ID.
-//   //phone is the phone no of the buyer.
-
-//   let result;
-//   let getPhoneNo;
-
-//   do {
-//     userState =  'INPUT_PHONE_NO';
-//     userStates.set(whatsappUserNumber, userState);
-
-//     message.reply('Enter phone number to buy data, Enter it like this: 08166358607 or type 'Cancel' to go back.');
-//     const getPhoneNoResponse = new Promise(async (resolve) => {
-//       const responseListener = async (responseMessage) => {
-//         if (responseMessage.from === message.from) {
-//           resolve(responseMessage.body);
-//           client.removeListener('message', responseListener);
-//         }
-//       };
-//       client.on('message', responseListener);
-//     });
-//      getPhoneNo = await getPhoneNoResponse;
-//     result = await utils.validateUserPhoneNo(getPhoneNo);
-//     if (getPhoneNo.toUpperCase() === 'CANCEL') {
-//       userState = 'START'; // Return to the main menu
-//       userStates.set(whatsappUserNumber, userState);
-//       message.reply('You have returned to the main menu.  \n a --> Fund wallet \n b --> Buy data \n c --> Check wallet balance \n d --> For inquirires/partnerships');
-//       return;
-//     }
-//   }
-//    while (result === false);
-
-//    //getInput is the phone number.
-
-//   //  (whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, message)
-//   let checkUserWalletBalance= await checkUserBalance(whatsappUserNumber, price);
-
-//   if (checkUserWalletBalance === false)
-//   {
-
-//     message.reply(`You have insufficient funds in your wallet to make this transaction, as your wallet balance is only ${user.walletBalance} NGN. Please press 1 to fund your wallet. Thank you!`);
-
-//     userState = 'INSUFFICIENT_FUNDS';
-//     userStates.set(whatsappUserNumber, userState);
-//   }
-//   else {
-
-//     const buyDataResponse = await utils.fetchData(whatsappUserNumber, DataAvenuePrice_ID, price, PatoMobile_data_id, getPhoneNo, network, type);
-//     message.reply(buyDataResponse);
-//     userState = 'START'
-//     userStates.set(whatsappUserNumber, userState);
-
-//   }
-
-// }
-
 async function listenForPhoneNo() {
   // eslint-disable-next-line new-cap
   const phoneNoEvent = new eventEmitter();
@@ -580,13 +394,29 @@ async function listenForPhoneNo() {
 }
 
 async function isRossyTransactionSuccessful(data) {
-  // check if data has the responses
-  console.log('---------------------->');
   console.log(data);
-
-  // eslint-disable-next-line no-prototype-builtins
+  if (data.balance_after) {
+    const balanceAfter = parseFloat(data.balance_after);
+    if (balanceAfter <= 1000) {
+      try {
+        await mail.main(`Rossy Balance below 1000 - NGN ${balanceAfter}`, `Your Rossy Balance is below NGN 1000 - NGN ${balanceAfter} \n Please update your balance. \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
+      } catch (err) {
+        console.error('Failed to send mail:', err);
+      }
+    }
+  }
   if (data.hasOwnProperty('Status') && data.Status === 'successful') {
+    try {
+      await mail.main(`Rossy Transaction Successful - NGN ${data.amount} to ${data.mobile_number}`, `Your Rossy Transaction was successful - NGN ${data.amount} \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
+    } catch (err) {
+      console.error('Failed to send mail:', err);
+    }
     return true;
+  }
+  try {
+    await mail.main(`Rossy Transaction Failed - NGN ${data.amount} to ${data.mobile_number}`, `Your Rossy Transaction Failed - NGN ${data.amount} \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
+  } catch (err) {
+    console.error('Failed to send mail:', err);
   }
   return false;
 }
@@ -632,6 +462,210 @@ async function createNewTransactionAndUpdateUserBalance(whatsappUserNumber, netw
   }
 }
 
+async function userWalletBalance(phoneNo) {
+  try {
+    const user = await Users.findOne({ phone: phoneNo });
+    return user.walletBalance;
+  } catch (err) {
+    console.error(err);
+    logger.error(err.message);
+    return 'Unable to check user wallet balance!';
+  }
+}
+async function ifUserCanCreateLink(numOfLinks, amount, walletBalance) {
+  const intNumOfLinks = parseInt(numOfLinks, 10);
+  const totalAmountToSpend = intNumOfLinks * amount;
+
+  console.log(`totalAmountToSpend is ${totalAmountToSpend}`);
+  console.log(amount);
+  if (walletBalance >= totalAmountToSpend) {
+    return true;
+  }
+  return false;
+}
+
+async function generateRandomFiveDigitAlphaNumericDigits() {
+  const length = 5;
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let result = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = crypto.randomBytes(1)[0] % characters.length;
+    result += characters.charAt(randomIndex);
+  }
+
+  return result;
+}
+// So basically store  random five digit alphanumeric digits in an array.
+
+async function generateLinkShortener(URL) {
+  const link = await generateRandomFiveDigitAlphaNumericDigits();
+  return {
+    link,
+    linkRedirectTo: URL,
+  };
+}
+async function generateCouponCode() {
+  const length = 30;
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-+*£';
+  let couponCode = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = crypto.randomBytes(1)[0] % characters.length;
+    couponCode += characters.charAt(randomIndex);
+  }
+  return couponCode;
+}
+
+async function storeCouponsToArray(phoneNo, amount, numOfLinks) {
+  const promises = Array(numOfLinks).fill().map(async () => {
+    const couponCode = await generateCouponCode();
+    return {
+      couponCode,
+      senderPhoneNo: phoneNo,
+      amount,
+    };
+  });
+
+  return await Promise.all(promises);
+}
+
+async function saveCouponToDb(coupons) {
+  try {
+    const newCoupons = await couponCodes.insertMany(coupons);
+    return newCoupons;
+  } catch (err) {
+    console.error(err);
+  }
+}
+async function generateAndSaveLinks(data, network, coupons) {
+  const URLS = [];
+  const promises = coupons.map(async (coupon) => {
+    const URL = `${MY_DOMAIN_NAME}/share/${data}/${network}?phoneNo=${coupon.senderPhoneNo}&couponCode=${coupon.couponCode}`;
+    const generatedURL = await generateLinkShortener(URL);
+    return generatedURL;
+  });
+  const linksArr = await Promise.all(promises);
+  const newLinks = await links.insertMany(linksArr);
+  newLinks.forEach((link) => {
+    URLS.push(`${MY_DOMAIN_NAME}/gift/${link.link}`);
+  });
+  return URLS;
+}
+async function deductAmountFromUserWalletBalance(amount, whatsappUserNumber) {
+  const user = await Users.findOne({ phone: whatsappUserNumber });
+  const amountFloat = parseFloat(amount);
+  console.log(`amount is ${amount}`);
+
+  if (user) {
+    const updateUserWalletBalance = await Users.findOneAndUpdate(
+      { phone: whatsappUserNumber },
+      { $inc: { walletBalance: -amountFloat } },
+      { new: true },
+    );
+    return {
+      status: true,
+      balance: updateUserWalletBalance.walletBalance,
+    };
+  }
+
+  return {
+    status: false,
+  };
+}
+
+async function sendToUser() {
+
+  // send mail ---->
+
+}
+async function addAmountToUserWalletBalance(amount, whatsappUserNumber) {
+  try {
+    const user = await Users.findOne({ phone: whatsappUserNumber });
+    const amountFloat = parseFloat(amount);
+    console.log(`amount is ${amount}`);
+    if (user) {
+      const updateUserWalletBalance = await Users.findOneAndUpdate(
+        { phone: whatsappUserNumber },
+        { $inc: { walletBalance: amountFloat } },
+        { new: true },
+      );
+      return {
+        status: true,
+        balance: updateUserWalletBalance.walletBalance,
+      };
+    }
+    return {
+      status: false,
+    };
+  } catch (err) {
+    logger.error(`Error in the addAmount Wallet: ${err.message}`);
+    return err.message;
+  }
+}
+
+async function findLink(couponCode) {
+  try {
+    const escapedCouponCode = couponCode.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const findLink = await links.findOne({ linkRedirectTo: { $regex: escapedCouponCode, $options: 'i' } });
+    // const findLink = await links.findOne({ link: { $regex: `.*${couponCode}.*`, $options: 'i' } });
+    return findLink.link;
+  } catch (err) {
+    logger.error(`Error in finding link: ${err.message}`);
+    console.error(err);
+  }
+}
+
+async function updateCoupon(couponCode, whatsappUserNumber) {
+  try {
+    const updateCoupon = await couponCodes.findOneAndUpdate({ couponCode: `${couponCode}` }, { isUsed: true, isExpired: true, usedBy: `${whatsappUserNumber}` }, { new: true });
+  } catch (err) {
+    logger.error(`Error in updating coupon: ${err.message}`);
+    console.error(err);
+  }
+}
+
+async function findCouponSenderByPhoneNo(senderPhoneNo) {
+  try {
+    const user = await Users.findOne({ phone: `${senderPhoneNo}` });
+    return user;
+  } catch (err) {
+    logger.error(`Error in finding coupon sender by phone no: ${err.message}`);
+    console.error(err);
+  }
+}
+
+async function findCoupon(coupon, senderPhoneNo) {
+  try {
+    const findCoupon = await couponCodes.findOne({ couponCode: `${coupon}`, senderPhoneNo: `${senderPhoneNo}` });
+    return findCoupon;
+  } catch (err) {
+    logger.error(`Error in finding coupon: ${err.message}`);
+    console.error(err);
+    return 'An error occured! No vex! Please try again later. ';
+  }
+}
+
+async function validateEmail(email) {
+  try {
+    const isValidated = await validator.validate(`${email}`); // true
+    return isValidated;
+  } catch (err) {
+    logger.error(`Error in validating email: ${err.message}`);
+    console.error(err);
+    return false;
+  }
+}
+
+async function updateUserAndAddEmail(whatsappUserNumber, email) {
+  try {
+    const user = await Users.findOneAndUpdate({ phone: whatsappUserNumber }, { $set: { email: `${email}` } }, { new: true });
+    return true;
+  } catch (err) {
+    return false;
+  }
+}
+// This converts a string to a URL, which then allows it to be parsed and coupon code extracted.
+
 module.exports = {
-  generateRandomReferenceID, createUser, checkUserBalance, fetchData, validateUserPhoneNo, generateCouponCodeAndSaveToDb, sendCouponCodeURLToExpBuddy, buyFromRossyTech, isRossyTransactionSuccessful, buyCGData, clubKonect, validateUserPhoneNoNetwork,
+  generateRandomReferenceID, createUser, checkUserBalance, fetchData, validateUserPhoneNo, buyFromRossyTech, isRossyTransactionSuccessful, buyCGData, clubKonect, validateUserPhoneNoNetwork, userWalletBalance, ifUserCanCreateLink, generateLinkShortener, generateRandomFiveDigitAlphaNumericDigits, generateAndSaveLinks, saveCouponToDb, storeCouponsToArray, generateCouponCode, addAmountToUserWalletBalance, deductAmountFromUserWalletBalance, findLink, updateCoupon, findCouponSenderByPhoneNo, findCoupon, validateEmail, updateUserAndAddEmail,
 };

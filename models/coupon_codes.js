@@ -1,49 +1,83 @@
-//Mongodb to hold user detail and wallet balance. 
+/* eslint-disable linebreak-style */
+// Mongodb to hold user detail and wallet balance.
 
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 const CouponCodeSchema = new Schema({
   couponCode: {
     type: String,
-    required: true
+    required: true,
   },
   senderPhoneNo: {
-    type: String, 
-    required: true, 
-    required: true
+    type: String,
+    required: true,
   },
-  dataAmount: {
-    type: String, 
-    required: true
+  amount: {
+    type: String,
+    required: true,
   },
   expiryTime: {
-    type: Date, 
-    required: true,
-    default: function() {
-      // Calculate expiry time as 24 hours (86400 seconds) after createdAt
-      return new Date(Date.now() + 86400 * 1000); // 86400 seconds * 1000 milliseconds
-    }
+    type: Date,
   },
   isUsed: {
     type: Boolean,
-    required: true, 
-    default: false
-  }, 
-  isExpired: 
+    required: true,
+    default: false,
+  },
+  isExpired:
   {
-    type:Boolean, 
-    required: true, 
-    default: false
+    type: Boolean,
+    required: true,
+    default: false,
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now(),
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now(),
+  },
+  usedBy: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  link: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  dataAmount: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  network: {
+    type: String,
+    required: false,
+    default: '',
+  },
+  isCouponUsed: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  isCouponExpired: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  couponUsedDate: {
+    type: Date,
+    required: false,
+  },
+  couponExpiryDate: {
+    type: Date,
+    required: false,
+  },
 });
 const couponCodes = mongoose.model('couponCodes', CouponCodeSchema);
-module.exports = couponCodes
+module.exports = couponCodes;
