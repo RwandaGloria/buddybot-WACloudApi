@@ -1,16 +1,26 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-console */
-/* eslint-disable linebreak-style */
+require('dotenv').config();
+
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-require('dotenv').config();
+const { Worker, Queue } = require('bullmq'); // Use `bullmq` instead of `bull`
 const logger = require('../logger');
 
-const { SMTP_GMAIL_USER } = process.env;
-const { SMTP_GMAIL_PASS } = process.env;
-const { SMTP_EMAIL_SENDER } = process.env;
+const { SMTP_GMAIL_USER, SMTP_GMAIL_PASS, SMTP_EMAIL_SENDER } = process.env;
+
+const { REDIS_HOST } = process.env;
+const REDIS_PORT = process.env.REDIS_PORT || 6379;
+const { REDIS_PASSWORD } = process.env;
+
+const redisOptions = {
+  redis: {
+    host: REDIS_HOST,
+    port: REDIS_PORT,
+    password: REDIS_PASSWORD,
+  },
+};
+const emailQueue = new Queue('emails', redisOptions);
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -34,8 +44,12 @@ const HTML_TEMPLATE = async (data) => {
     throw error;
   }
 };
-async function main(subject, emailContent, recipients) {
+
+const worker = new Worker('emails', async (job) => {
   try {
+    const { to, subject, emailContent } = job.data;
+    console.log('Processing job:', job.data);
+
     const dynamicData = {
       dynamicHeading: `Expenditures Buddy - ${subject}`,
       customerName: 'Customer',
@@ -43,19 +57,39 @@ async function main(subject, emailContent, recipients) {
     };
 
     const htmlContent = await HTML_TEMPLATE(dynamicData);
-    // send mail with defined transport object
-    const info = await transporter.sendMail({
+
+    const mailOptions = {
       from: `${SMTP_EMAIL_SENDER}`,
-      to: `${recipients}`, // list of receivers
+      to: `${to}`,
       subject: `${subject}`,
-      text: '',
-      html: htmlContent, // html body
-    });
+      text: emailContent,
+      html: htmlContent,
+    };
+
+    const info = await transporter.sendMail(mailOptions);
     console.log('Message sent: %s', info.messageId);
   } catch (error) {
     logger.error(error);
     console.error(error);
   }
-}
+});
 
+emailQueue.on('error', (error) => {
+  console.error('Error connecting to Redis:', error);
+});
+
+async function main(subj, emailBody, recipients) {
+  try {
+    // Add the job to the queue
+    await emailQueue.add('emails', {
+      to: `${recipients}`,
+      subject: `${subj}`,
+      emailContent: `${emailBody}`, // Use 'emailContent' instead of 'body'
+    });
+    console.log('Added to queue');
+  } catch (error) {
+    logger.error(error);
+    console.error(error);
+  }
+}
 module.exports = { main };

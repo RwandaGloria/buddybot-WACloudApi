@@ -47,6 +47,7 @@ Router.get('/share/:data/:network', async (req, res) => {
   }
   const updateCoupon = await couponCodes.findOneAndUpdate({ couponCode }, { $set: { dataAmount: data, network } });
 
+  console.log(coupon);
   if (coupon.isExpired === true) {
     return res.status(404).send('Link has expired!');
   }

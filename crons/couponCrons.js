@@ -66,12 +66,10 @@ const expireCoupons = async () => {
   }
 };
 
-const task = cron.schedule('0 0 */2 * *', expireCoupons, { scheduled: true, timezone: 'Africa/Lagos' });
-
-// const cronTask = cron.schedule('0 0 */2 * *', expireCoupons, {
-//   scheduled: true,
-//   timezone: 'Africa/Lagos',
-// });
+const task = cron.schedule('0 0 */2 * *', expireCoupons, {
+  scheduled: true,
+  timezone: 'Africa/Lagos',
+});
 
 // cronTask.start();
 task.start();

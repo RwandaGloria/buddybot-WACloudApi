@@ -1,3 +1,4 @@
+
 //Mongodb to hold user detail and wallet balance. 
 
 const mongoose = require('mongoose');

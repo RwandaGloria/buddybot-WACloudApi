@@ -240,6 +240,7 @@ async function validateUserPhoneNoNetwork(phonenumber, ROSSY_NETWORK_CODE, CLUBK
     if (network === obj[CLUBKONECT_MOBILE_NETWORK_CODE]) {
       return {
         status: true,
+
       };
     }
     return {
@@ -258,6 +259,7 @@ async function validateUserPhoneNo(number, CLUBKONECT_MOBILE_NETWORK_CODE) {
       console.log('INvalid regex pattern!');
       return {
         status: false,
+        message: 'Please enter a valid Nigerian phone number, like this, 08166358607 or enter Cancel to go back to the main menu',
       };
     }
     const phoneUtil = PhoneNumberUtil.getInstance();
@@ -269,8 +271,8 @@ async function validateUserPhoneNo(number, CLUBKONECT_MOBILE_NETWORK_CODE) {
         status: false, message: 'Please enter a valid Nigerian phone number, like this, 08166358607',
       };
     }
-    const phone = new NigerianPhone(number);
-    const network = phone.getNetwork().toUpperCase();
+    const phone = new phoneNoValidator.validatePhoneNumberSync(number);
+    const network = phone.telco;
     const obj = {
       '01': 'MTN',
       '02': 'GLO',
@@ -508,7 +510,7 @@ async function generateLinkShortener(URL) {
 }
 async function generateCouponCode() {
   const length = 30;
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-+*£';
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let couponCode = '';
   for (let i = 0; i < length; i++) {
     const randomIndex = crypto.randomBytes(1)[0] % characters.length;
@@ -541,7 +543,7 @@ async function saveCouponToDb(coupons) {
 async function generateAndSaveLinks(data, network, coupons) {
   const URLS = [];
   const promises = coupons.map(async (coupon) => {
-    const URL = `${MY_DOMAIN_NAME}/share/${data}/${network}?phoneNo=${coupon.senderPhoneNo}&couponCode=${coupon.couponCode}`;
+    const URL = `/share/${data}/${network}?phoneNo=${coupon.senderPhoneNo}&couponCode=${coupon.couponCode}`;
     const generatedURL = await generateLinkShortener(URL);
     return generatedURL;
   });
