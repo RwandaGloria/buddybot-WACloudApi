@@ -52,7 +52,8 @@ const cronTask = require('./crons/couponCrons');
 const mail = require('./mail/config');
 const links = require('./models/links');
 
-const from = '138691232664340';
+// const from = '138691232664340';
+const from = '148830374977547';
 const token = process.env.ACCESS_TOKEN;
 const webhookVerifyToken = 'hellogloriathisis';
 const bot = createBot.createBot(from, token);

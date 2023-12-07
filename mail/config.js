@@ -10,7 +10,7 @@ const logger = require('../logger');
 const { SMTP_GMAIL_USER, SMTP_GMAIL_PASS, SMTP_EMAIL_SENDER } = process.env;
 
 const { REDIS_HOST } = process.env;
-const REDIS_PORT = process.env.REDIS_PORT || 6379;
+const { REDIS_PORT } = process.env;
 const { REDIS_PASSWORD } = process.env;
 
 const redisOptions = {
