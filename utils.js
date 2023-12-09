@@ -17,7 +17,8 @@ const { PhoneNumberUtil } = require('google-libphonenumber');
 // const NigerianPhone = require('validate_nigerian_phone');
 const crypto = require('crypto');
 const validator = require('email-validator');
-const phoneNoValidator = require('nigeria-phone-number-validator');
+// eslint-disable-next-line import/no-unresolved
+const phoneNoValidator = require('./phone-no-validator/index');
 const db = require('./db');
 const Users = require('./models/users');
 const logger = require('./logger');
@@ -227,7 +228,7 @@ async function buyFromRossyTech(network_id, phoneNoForPurchase, plan_id) {
 }
 
 async function validateUserPhoneNoNetwork(phonenumber, ROSSY_NETWORK_CODE, CLUBKONECT_MOBILE_NETWORK_CODE) {
-  const phone = new phoneNoValidator.validatePhoneNumberSync(phonenumber);
+  const phone = phoneNoValidator.validatePhoneNumberSync(phonenumber);
   const network = phone.telco;
 
   const obj = {
@@ -271,7 +272,7 @@ async function validateUserPhoneNo(number, CLUBKONECT_MOBILE_NETWORK_CODE) {
         status: false, message: 'Please enter a valid Nigerian phone number, like this, 08166358607',
       };
     }
-    const phone = new phoneNoValidator.validatePhoneNumberSync(number);
+    const phone = phoneNoValidator.validatePhoneNumberSync(number);
     const network = phone.telco;
     const obj = {
       '01': 'MTN',
@@ -410,7 +411,7 @@ async function isRossyTransactionSuccessful(data) {
   }
   if (data.hasOwnProperty('Status') && data.Status === 'successful') {
     try {
-      await mail.main(`Rossy Transaction Successful - NGN ${data.amount} to ${data.mobile_number}`, `Your Rossy Transaction was successful - NGN ${data.plan_amount} \n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
+      await mail.main(`Rossy Transaction Successful - NGN ${data.plan_amount} to ${data.mobile_number}`, `Your Rossy Transaction was successful - NGN ${data.plan_amount} and your balance is now NGN ${data.balance_after}\n\n`, `${USER_ADMIN_EMAIL_ADDDR}`);
     } catch (err) {
       console.error('Failed to send mail:', err);
     }
@@ -484,6 +485,7 @@ async function ifUserCanCreateLink(numOfLinks, amount, walletBalance) {
   if (walletBalance >= totalAmountToSpend) {
     return true;
   }
+  console.log(walletBalance);
   return false;
 }
 
@@ -630,6 +632,7 @@ async function updateCoupon(couponCode, whatsappUserNumber) {
 async function findCouponSenderByPhoneNo(senderPhoneNo) {
   try {
     const user = await Users.findOne({ phone: `${senderPhoneNo}` });
+    console.log(`user email is ${user.email}`);
     return user;
   } catch (err) {
     logger.error(`Error in finding coupon sender by phone no: ${err.message}`);

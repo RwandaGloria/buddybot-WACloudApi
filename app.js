@@ -60,6 +60,12 @@ const bot = createBot.createBot(from, token);
 const { MY_DOMAIN_NAME } = process.env;
 
 const userStates = new Map();
+const welcomeMsgTemplate = `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
+a --> Fund wallet
+b --> Buy data
+c --> Check wallet balance
+d --> For inquiries and partnerships.
+e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`;
 let whatsappUserNumber;
 let userState;
 
@@ -206,7 +212,7 @@ let userState;
                 userState = 'START';
 
                 userStates.set(whatsappUserNumber, userState);
-              } else if (findCoupon.senderPhoneNo === whatsappUserNumber) {
+              } else if (findCoupon && findCoupon.isUsed === false && findCoupon.isExpired === false) {
                 // Add to wallet balance, the amount!
                 const addCouponAmount = await utils.addAmountToUserWalletBalance(findCoupon.amount, whatsappUserNumber);
                 const findLink = await utils.findLink(findCoupon.couponCode);
@@ -217,13 +223,12 @@ let userState;
                   const updateCoupon = await utils.updateCoupon(findCoupon.couponCode, whatsappUserNumber);
                   const user = await utils.findCouponSenderByPhoneNo(findCoupon.senderPhoneNo);
                   if (!user.email) {
-                    await bot.sendText(whatsappUserNumber, 'An error occurred! Try again later!');
                     userState = 'START';
                     userStates.set(whatsappUserNumber, userState);
+                    return await bot.sendText(whatsappUserNumber, 'An error occurred! Try again later!');
                   }
-
                   const senderEmail = user.email;
-                  const sendMailToSender = await mail.main('Coupon Code Used', `The link: ${findLink} has been used by ${whatsappUserNumber} and the N${findCoupon.amount} has been permanently deducted from your wallet balance! \n\n Your wallet balance is still NGN${addCouponAmount.balance}!, \n\n Thanks so much for your patronage. `, `${senderEmail}`);
+                  const sendMailToSender = await mail.main('Coupon Code Used', `The link: ${MY_DOMAIN_NAME}/${findLink} has been used by ${whatsappUserNumber} and the N${findCoupon.amount} has been permanently deducted from your wallet balance! \n\n Your wallet balance is still NGN${addCouponAmount.balance}!, \n\n Thanks so much for your patronage. `, `${senderEmail}`);
 
                   userState = 'START';
                   userStates.set(whatsappUserNumber, userState);
@@ -299,13 +304,7 @@ let userState;
 
                   userState = 'START'; // Return to the main menu
                   userStates.set(whatsappUserNumber, userState);
-                  await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                a --> Fund wallet
-                b --> Buy data
-                c --> Check wallet balance
-                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others (Beta)
-                `);
+                  await bot.sendText(msg.from, welcomeMsgTemplate);
                 } else {
                 // Handle invalid phone number input
                   await bot.sendText(whatsappUserNumber, result.message);
@@ -329,12 +328,7 @@ let userState;
             if (userInput.toUpperCase() === 'CANCEL') {
               userState = 'START';
               userStates.set(whatsappUserNumber, userState);
-              await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships.
-              e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              await bot.sendText(msg.from, welcomeMsgTemplate);
             } else {
               const email = msg.data.text;
               const isEmailValidated = await utils.validateEmail(email);
@@ -365,12 +359,7 @@ let userState;
               case 'CANCEL':
                 userState = 'START';
                 userStates.set(whatsappUserNumber, userState);
-                await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                a --> Fund wallet
-                b --> Buy data
-                c --> Check wallet balance
-                d --> For inquiries and partnerships.
-                e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                await bot.sendText(msg.from, welcomeMsgTemplate);
                 break;
               case 'A':
                 if (myUser.userType === 'business') {
@@ -463,7 +452,6 @@ let userState;
                 userStates.set(whatsappUserNumber, userState);
                 break;
               case 'D':
-
                 if (myUser.userType === 'business') {
                   await bot.sendText(msg.from, `Which of the data plans would you like to share? \n\n 9mobile Data Plans \n
               a. 9mobile 500MB -> NGN ${nin_mobile_500mb_business} \n
@@ -490,6 +478,8 @@ let userState;
                 userState = 'SHARE_9MOBILE_DATA';
                 userStates.set(whatsappUserNumber, userState);
                 break;
+              default:
+                await bot.sendText(msg.from, 'Invalid message format, enter a or b or c or enter Cancel to go back to main menu');
             }
             break;
           case 'SHARE_MTN_DATA':
@@ -591,12 +581,7 @@ let userState;
                 if (msg.data.text.toUpperCase() === 'CANCEL') {
                   userState = 'START';
                   userStates.set(whatsappUserNumber, userState);
-                  await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                a --> Fund wallet
-                b --> Buy data
-                c --> Check wallet balance
-                d --> For inquiries and partnerships.
-                e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                  await bot.sendText(msg.from, welcomeMsgTemplate);
                 } else if (msg.data.text.toUpperCase() === null) {
                   await bot.sendText(whatsappUserNumber, 'Invalid message format, enter Cancel to go back to main menu');
                 }
@@ -690,12 +675,7 @@ let userState;
                 if (msg.data.text.toUpperCase() === 'CANCEL') {
                   userState = 'START';
                   userStates.set(whatsappUserNumber, userState);
-                  await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                  a --> Fund wallet
-                  b --> Buy data
-                  c --> Check wallet balance
-                  d --> For inquiries and partnerships.
-                  e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                  await bot.sendText(msg.from, welcomeMsgTemplate);
                 } else if (msg.data.text.toUpperCase() === null) {
                   await bot.sendText(whatsappUserNumber, 'Invalid message format, enter Cancel to go back to main menu');
                 }
@@ -916,12 +896,7 @@ let userState;
               userStates.set(whatsappUserNumber, userState);
             } else {
               console.log(userState);
-              await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-            a --> Fund wallet
-            b --> Buy data
-            c --> Check wallet balance
-            d --> For inquiries and partnerships.
-            e --> Share data to others (Beta)  \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              await bot.sendText(msg.from, welcomeMsgTemplate);
             }
             break;
           case 'ENTER_NUM_LINKS':
@@ -932,7 +907,7 @@ let userState;
               userStates.set(whatsappUserNumber, userState);
             } else {
               if (parseInt(userInput, 10) > 40) {
-                await bot.sendText(whatsappUserNumber, 'You can\'t share more than 50 links at a time, please enter a number less than 50 or type Cancel to go back to the main menu!');
+                await bot.sendText(whatsappUserNumber, 'You can\'t share more than 40 links at a time, please enter a number less than 40 or type Cancel to go back to the main menu!');
               }
               const result = await utils.ifUserCanCreateLink(userInput, amountToShare, user.walletBalance);
               if (result === true) {
@@ -954,12 +929,11 @@ let userState;
                 await bot.sendText(whatsappUserNumber, `Here are your links: \n\n${string} \n Please take note that if the data isn't used in 2 days time, it will expire and the amount (${amountToShare}) for each link will be returned to your wallet balance. `);
                 userState = 'START';
                 userStates.set(whatsappUserNumber, userState);
-                await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                a --> Fund wallet
-                b --> Buy data
-                c --> Check wallet balance
-                d --> For inquiries and partnerships. \n
-                e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                await bot.sendText(msg.from, welcomeMsgTemplate);
+              } else if (result === false) {
+                await bot.sendText(whatsappUserNumber, `You don't have enough balance to share ${userInput} links, as your balance is NGN ${user.walletBalance} please fund your wallet by entering A or enter Cancel to go back to main menu`);
+                userState = 'START';
+                userStates.set(whatsappUserNumber, userState);
               } else {
                 await bot.sendText(whatsappUserNumber, 'Enter valid number, e.g. 10 or enter CANCEL to go back to the main menu');
               }
@@ -1022,12 +996,7 @@ let userState;
               case 'CANCEL':
                 userState = 'START';
                 userStates.set(whatsappUserNumber, userState);
-                await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships. \n
-              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                await bot.sendText(msg.from, welcomeMsgTemplate);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
@@ -1101,12 +1070,7 @@ let userState;
               case 'CANCEL':
                 userState = 'START';
                 userStates.set(whatsappUserNumber, userState);
-                await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-                a --> Fund wallet
-                b --> Buy data
-                c --> Check wallet balance
-                d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-                e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+                await bot.sendText(msg.from, welcomeMsgTemplate);
                 break;
               default:
                 if (!(userState === 'FUND_WALLET' || userState === 'INPUT_PHONE_NO')) {
@@ -1121,12 +1085,7 @@ let userState;
             await bot.sendText(msg.from, `You have NGN ${checkUserType.walletBalance}  in your wallet balance.\n\n`);
             userState = 'START'; // Return to the main menu4
             userStates.set(whatsappUserNumber, userState);
-            await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+            await bot.sendText(msg.from, welcomeMsgTemplate);
             break;
           case 'CHOOSE_NETWORK':
             checkUserType = await Users.findOne({ phone: whatsappUserNumber });
@@ -1249,12 +1208,7 @@ let userState;
               `);
               }
             } else if (userInput.toUpperCase() === 'CANCEL') {
-              await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-              a --> Fund wallet
-              b --> Buy data
-              c --> Check wallet balance
-              d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-              e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+              await bot.sendText(msg.from, welcomeMsgTemplate);
               userState = 'START';
               userStates.set(whatsappUserNumber, userState);
             }
@@ -1262,12 +1216,7 @@ let userState;
           case 'CANCEL':
             userState = 'START';
             userStates.set(whatsappUserNumber, userState);
-            await bot.sendText(msg.from, `Welcome to ${MY_BUSINESS_NAME}, your internet data bundles socket! 🤩 \n\n 
-            a --> Fund wallet
-            b --> Buy data
-            c --> Check wallet balance
-            d --> For inquiries and partnerships. \n\n Please enter one of the following options to get started, a or b or c: \n
-            e --> Share data to others (Beta). \n\n Please enter one of the following options to get started, a or b or c: \n`);
+            await bot.sendText(msg.from, welcomeMsgTemplate);
             break;
           case 'CHOOSE_MTN_PLAN':
             switch (userInput.toUpperCase()) {
